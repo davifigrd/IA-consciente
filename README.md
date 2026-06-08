@@ -121,11 +121,11 @@ O projeto busca contribuir para:
 
 ## Desenvolvedores
 
-**Cayke Gonçalves Garcia: 1-26-16589**
-**Davi Figueiredo Rocha Dutra: 1-26-16975**
-**Heitor Francisco Ribeiro: 1-26-16976**
-**Júlia da Silva Santos: 1-26-16250**
-**Kauã Amorim de Oliveira: 1-26-17036**
+- **Cayke Gonçalves Garcia: 1-26-16589**
+- **Davi Figueiredo Rocha Dutra: 1-26-16975**
+- **Heitor Francisco Ribeiro: 1-26-16976**
+- **Júlia da Silva Santos: 1-26-16250**
+- **Kauã Amorim de Oliveira: 1-26-17036**
 
 ---
 

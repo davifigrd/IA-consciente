@@ -1,0 +1,117 @@
+/* ==========================
+   TURING TEST
+========================== */
+
+.turing-page {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding-top: 150px;
+}
+
+.turing-page h1 {
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.turing-page p {
+  text-align: center;
+}
+
+.placar {
+  margin: 30px auto;
+
+  width: 250px;
+
+  text-align: center;
+
+  background: #22c1b8;
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  font-size: 1.2rem;
+}
+
+.textos {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+.texto-box {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.texto-box h2 {
+  margin-bottom: 15px;
+}
+
+.texto-box button {
+  margin-top: 20px;
+
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  background: #0e2a5a;
+
+  color: white;
+}
+
+#resultadoTuring {
+  margin-top: 40px;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#proximaRodada {
+  margin-top: 30px;
+
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  background: #22c1b8;
+
+  color: white;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .textos {
+    grid-template-columns: 1fr;
+  }
+}

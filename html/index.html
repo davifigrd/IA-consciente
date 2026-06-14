@@ -1,9 +1,271 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>IA Consciente</title>
+
+    <!-- Favicon primeiro -->
+    <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
+
+    <!-- CSS base -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
-  <body></body>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header>
+      <nav class="navbar" aria-label="Navegação principal">
+        <a href="index.html" class="logo-area">
+          <img src="../img/logo.png" alt="IA Consciente" />
+          <span>IA Consciente</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+
+          <li><a href="simulador.html">Simulador</a></li>
+
+          <li><a href="turing.html">Humano x Máquina</a></li>
+
+          <li><a href="quiz.html">Quiz</a></li>
+
+          <li><a href="guia.html">Guia</a></li>
+
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button id="darkModeBtn">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <button id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="conteiner hero-content">
+        <div class="hero-text">
+          <h1>
+            Aprenda a utilizar Inteligência Artificial de forma crítica e
+            consciente.
+          </h1>
+
+          <p>
+            Identifique erros, vieses, informações falsas e limitações dos
+            sistemas de IA antes de compartilhar ou utilizar conteúdos em
+            trabalhos acadêmicos.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="simulador.html" class="btn-primary"> Testar Simulador </a>
+
+            <a href="#sobre" class="btn-secondary"> Saiba Mais </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="../img/logo.png" alt="Logo" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTATÍSTICAS -->
+
+    <section class="stats">
+      <div class="stat-card">
+        <h2 id="usuarios">0</h2>
+
+        <p>Usuários de IA</p>
+      </div>
+
+      <div class="stat-card">
+        <h2 id="conteudos">0</h2>
+
+        <p>Conteúdos Gerados</p>
+      </div>
+
+      <div class="stat-card">
+        <h2 id="riscos">0</h2>
+
+        <p>Possíveis Erros Detectados</p>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="about" id="sobre">
+      <h2>O que é IA Consciente?</h2>
+
+      <p>
+        A Inteligência Artificial tornou-se uma ferramenta poderosa para
+        estudos, trabalho e pesquisa. Porém, nem sempre as respostas fornecidas
+        são corretas.
+      </p>
+
+      <p>
+        O projeto IA Consciente foi criado para ensinar estudantes, professores
+        e usuários comuns a reconhecerem possíveis erros, vieses e limitações
+        presentes em conteúdos gerados por IA.
+      </p>
+    </section>
+
+    <!-- CARDS -->
+
+    <section class="cards">
+      <div class="card">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <h3>Alucinação</h3>
+
+        <p>
+          Quando a IA inventa informações que parecem verdadeiras, mas não
+          possuem base factual.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        <h3>Viés</h3>
+
+        <p>
+          Sistemas podem reproduzir preconceitos presentes nos dados utilizados
+          durante o treinamento.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <h3>Verificação</h3>
+
+        <p>
+          Toda informação relevante deve ser comparada com fontes confiáveis.
+        </p>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+
+    <section class="benefits">
+      <h2>Benefícios da IA</h2>
+
+      <div class="benefits-grid">
+        <div>
+          <i class="fa-solid fa-bolt"></i>
+          Agilidade
+        </div>
+
+        <div>
+          <i class="fa-solid fa-graduation-cap"></i>
+          Educação
+        </div>
+
+        <div>
+          <i class="fa-solid fa-lightbulb"></i>
+          Criatividade
+        </div>
+
+        <div>
+          <i class="fa-solid fa-chart-line"></i>
+          Produtividade
+        </div>
+      </div>
+    </section>
+
+    <!-- RISCOS -->
+
+    <section class="risks">
+      <h2>Principais Riscos</h2>
+
+      <div class="risk-list">
+        <div class="risk">
+          <h3>Fake News</h3>
+
+          <p>Informações incorretas podem ser disseminadas rapidamente.</p>
+        </div>
+
+        <div class="risk">
+          <h3>Fontes Falsas</h3>
+
+          <p>Algumas IAs inventam livros, artigos e autores.</p>
+        </div>
+
+        <div class="risk">
+          <h3>Dependência Excessiva</h3>
+
+          <p>O uso sem senso crítico pode prejudicar a aprendizagem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS REAIS -->
+
+    <section class="cases">
+      <h2>Casos Reais</h2>
+
+      <div class="case-card">
+        <h3>Advogados e citações falsas</h3>
+
+        <p>
+          Em diversos países, profissionais utilizaram IA para gerar documentos
+          jurídicos que continham processos inexistentes.
+        </p>
+      </div>
+
+      <div class="case-card">
+        <h3>Informações médicas incorretas</h3>
+
+        <p>
+          Algumas ferramentas já apresentaram diagnósticos incorretos ou
+          inventados.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+      <h2>Você consegue identificar uma resposta gerada por IA?</h2>
+
+      <a href="turing.html" class="btn-primary"> Iniciar Teste </a>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <img src="../img/logo.png" alt="Logo" loading="lazy" />
+
+      <h3>IA Consciente</h3>
+
+      <p>Projeto de Extensão da Universidade FAMINAS</p>
+
+      <p>Promovendo o uso responsável da Inteligência Artificial.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
 </html>

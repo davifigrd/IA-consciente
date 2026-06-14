@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Humano x Máquina</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
+  </head>
+
+  <body>
+    <section class="turing-container">
+      <h1>Humano x Máquina</h1>
+
+      <p>Tente identificar qual texto foi escrito por IA.</p>
+
+      <div class="painel">
+        <div>
+          Rodada:
+          <span id="rodada"> 1 </span>/10
+        </div>
+
+        <div>
+          Tempo:
+          <span id="tempo"> 30 </span>s
+        </div>
+
+        <div>
+          Pontos:
+          <span id="pontos"> 0 </span>
+        </div>
+      </div>
+
+      <div class="barra">
+        <div id="progresso"></div>
+      </div>
+
+      <div class="textos">
+        <div class="card-turing">
+          <h2>Texto A</h2>
+
+          <p id="textoA"></p>
+
+          <button onclick="responder('A')">Escolher A</button>
+        </div>
+
+        <div class="card-turing">
+          <h2>Texto B</h2>
+
+          <p id="textoB"></p>
+
+          <button onclick="responder('B')">Escolher B</button>
+        </div>
+      </div>
+
+      <div id="feedback"></div>
+
+      <button id="proxima">Próxima Rodada</button>
+    </section>
+
+    <script src="js/turing.js"></script>
+  </body>
+</html>

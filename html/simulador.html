@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Simulador de Alucinação</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/simulador.css" />
+
+    <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-area">
+          <img src="img/logo.png" />
+
+          <span>IA Consciente</span>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+
+          <li><a href="turing.html">Humano x Máquina</a></li>
+
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="simulador-page">
+      <h1>Simulador de Alucinação de IA</h1>
+
+      <p>
+        Cole abaixo um texto gerado por IA e descubra possíveis sinais de
+        informações duvidosas.
+      </p>
+
+      <textarea
+        id="texto"
+        placeholder="Cole aqui o texto para análise..."
+      ></textarea>
+
+      <button id="analisarBtn">Analisar Texto</button>
+
+      <div id="scoreBox">
+        <h2>Confiabilidade</h2>
+
+        <div id="score">100%</div>
+      </div>
+
+      <div id="resultado"></div>
+    </section>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/simulador.js"></script>
+  </body>
+</html>

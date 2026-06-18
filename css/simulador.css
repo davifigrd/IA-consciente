@@ -1,62 +1,502 @@
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+/* ==================================
+   HERO
+================================== */
 
-.hero {
+.simulador-hero {
+  padding-top: 170px;
+  padding-bottom: 80px;
+
   text-align: center;
-  margin-bottom: 30px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary),
+    var(--primary-light)
+  );
+
+  color: var(--white);
+
+  position: relative;
+  overflow: hidden;
 }
 
-.simulador-box {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.simulador-hero h1 {
+  font-size: 3rem;
+
+  color: var(--white);
+
+  margin-bottom: 20px;
 }
+
+.simulador-hero p {
+  max-width: 800px;
+
+  margin: auto;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==================================
+   HERO - DARK MODE
+================================== */
+
+.dark .simulador-hero {
+  background: linear-gradient(135deg, #07162d, #0b1830);
+}
+
+.dark .simulador-hero p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==================================
+   O QUE O SIMULADOR VERIFICA
+================================== */
+
+.risks {
+  padding: 80px 8%;
+
+  background: var(--white);
+}
+
+.dark .risks {
+  background: #091425;
+}
+
+/* ==================================
+   ÁREA DO SIMULADOR
+================================== */
+
+.simulador-section {
+  padding: 80px 8%;
+
+  background: #f8fbff;
+}
+
+.dark .simulador-section {
+  background: #07162d;
+}
+
+.simulador-grid {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 30px;
+}
+
+/* ==================================
+   CAMPO DE TEXTO
+================================== */
 
 textarea {
   width: 100%;
-  height: 200px;
-  padding: 15px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  resize: none;
-  font-size: 16px;
+
+  min-height: 320px;
+
+  padding: 20px;
+
+  margin: 25px 0;
+
+  border: 2px solid #dbe4f0;
+  border-radius: 20px;
+
+  resize: vertical;
+
+  font-family: inherit;
+  font-size: 1rem;
+
   outline: none;
+
+  transition: 0.3s;
 }
 
-button {
-  margin-top: 15px;
-  padding: 12px 20px;
-  border: none;
-  background: #2563eb;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
+textarea:focus {
+  border-color: var(--secondary);
+
+  box-shadow: 0 0 20px rgba(34, 193, 184, 0.2);
 }
 
-button:hover {
-  background: #1d4ed8;
+.dark textarea {
+  background: #0b1830;
+
+  color: var(--white);
+
+  border-color: #1c315a;
 }
 
-.resultado {
+/* ==================================
+   BOTÕES DO SIMULADOR
+================================== */
+
+.acoes-texto {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
   margin-top: 20px;
+}
+
+.acoes-texto button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  flex: 1;
+
+  cursor: pointer;
+}
+
+/* Botão principal */
+
+.acoes-texto .btn-primary {
+  background: var(--primary);
+
+  color: var(--white);
+
+  border: 2px solid var(--primary);
+
+  transition: var(--transition);
+}
+
+.acoes-texto .btn-primary:hover {
+  background: var(--primary-light);
+
+  border-color: var(--primary-light);
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* Botões secundários */
+
+.acoes-texto .btn-secondary {
+  background: transparent;
+
+  color: var(--primary);
+
+  border: 2px solid var(--primary);
+
+  transition: var(--transition);
+}
+
+.acoes-texto .btn-secondary:hover {
+  background: var(--primary);
+
+  color: var(--white);
+}
+
+/* ==================================
+   BOTÕES - DARK MODE
+================================== */
+
+.dark .acoes-texto .btn-primary {
+  background: var(--secondary);
+
+  color: var(--primary-dark);
+
+  border-color: var(--secondary);
+}
+
+.dark .acoes-texto .btn-primary:hover {
+  background: var(--secondary-light);
+
+  border-color: var(--secondary-light);
+}
+
+.dark .acoes-texto .btn-secondary {
+  color: var(--white);
+
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .acoes-texto .btn-secondary:hover {
+  background: var(--secondary);
+
+  color: var(--primary-dark);
+
+  border-color: var(--secondary);
+}
+
+/* ==================================
+   CARD DE CONFIABILIDADE
+================================== */
+
+.resultado-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* ==================================
+   INDICADOR DE CONFIABILIDADE
+================================== */
+
+#scoreBox {
+  margin: 35px 0;
+}
+
+#score {
+  font-size: 4.5rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  color: var(--secondary);
+}
+
+#scoreBox p {
+  margin-top: 15px;
+
+  color: var(--gray);
+}
+
+.dark #scoreBox p {
+  color: var(--gray-light);
+}
+
+/* ==================================
+   ALERTAS
+================================== */
+
+.alerta {
   padding: 15px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 87, 87, 0.12);
+
+  border-left: 5px solid #ff5757;
+}
+
+.dark .alerta {
+  background: rgba(255, 87, 87, 0.15);
+}
+
+/* ==================================
+   EXEMPLOS DE TESTE
+================================== */
+
+.exemplos {
+  padding: 80px 8%;
+
+  background: var(--white);
+}
+
+.dark .exemplos {
+  background: #091425;
+}
+
+.exemplos .cards {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 25px;
+}
+
+.exemplo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  height: 100%;
+}
+
+.exemplo-card p {
+  margin: 20px 0;
+
+  line-height: 1.8;
+
+  flex: 1;
+}
+
+/* ==================================
+   BADGES DE RISCO
+================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.baixo {
+  background: rgba(34, 193, 184, 0.15);
+  color: #22c1b8;
+}
+
+.medio {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.alto {
+  background: rgba(255, 87, 87, 0.15);
+  color: #ff5757;
+}
+
+/* ==================================
+   BOTÃO COPIAR EXEMPLO
+================================== */
+
+.copiar-exemplo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: auto;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(30, 41, 59, 0.15);
   border-radius: 10px;
-  background: #f1f5f9;
-  min-height: 60px;
+
+  background: transparent;
+
+  color: var(--gray);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
-.risco {
-  color: #b91c1c;
-  font-weight: bold;
+.copiar-exemplo:hover {
+  border-color: var(--primary);
+
+  color: var(--primary);
+
+  background: rgba(59, 130, 246, 0.05);
 }
 
-.ok {
-  color: #166534;
-  font-weight: bold;
+.dark .copiar-exemplo {
+  border-color: rgba(255, 255, 255, 0.12);
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .copiar-exemplo:hover {
+  border-color: var(--secondary);
+
+  color: var(--secondary);
+
+  background: rgba(34, 193, 184, 0.08);
+}
+
+/* ==================================
+   GUIA DE VERIFICAÇÃO
+================================== */
+
+.guia-verificacao {
+  padding: 80px 8%;
+
+  background: #eef6fb;
+}
+
+.dark .guia-verificacao {
+  background: #0b1830;
+}
+
+/* ==================================
+   RESPONSIVIDADE
+================================== */
+
+@media (max-width: 900px) {
+  .simulador-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .simulador-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .acoes-texto {
+    flex-direction: column;
+  }
+
+  .acoes-texto button {
+    width: 100%;
+  }
+
+  #score {
+    font-size: 4rem;
+  }
+}
+/* ==================================
+   ÍCONE DO BOTÃO COPIAR EXEMPLO
+================================== */
+
+.copiar-exemplo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.copiar-exemplo i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+
+  font-size: 0.85rem;
+
+  position: relative;
+  top: 1px;
+
+  line-height: 1;
+}
+/* ==================================
+   BOTÃO COPIAR EXEMPLO
+================================== */
+
+.copiar-exemplo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.copiar-exemplo i {
+  margin: 0;
+  padding: 0;
+
+  width: auto;
+  height: auto;
+
+  font-size: 0.9rem;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }

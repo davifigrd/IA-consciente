@@ -5,12 +5,30 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Simulador de Alucinação</title>
+    <title>Simulador de Alucinação | IA Consciente</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/simulador.css" />
+    <!-- FAVICON -->
 
     <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="stylesheet" href="../css/simulador.css" />
+
+    <!-- FONTES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ÍCONES -->
 
     <link
       rel="stylesheet"
@@ -19,49 +37,306 @@
   </head>
 
   <body>
+    <!-- NAVBAR -->
+
     <header>
-      <nav class="navbar">
-        <div class="logo-area">
-          <img src="img/logo.png" />
+      <nav class="navbar" aria-label="Navegação principal">
+        <a href="index.html" class="logo-area">
+          <img src="../img/logo.png" alt="IA Consciente" loading="lazy" />
 
           <span>IA Consciente</span>
-        </div>
+        </a>
 
         <ul class="nav-links">
           <li><a href="index.html">Início</a></li>
 
+          <li><a href="simulador.html">Simulador</a></li>
+
           <li><a href="turing.html">Humano x Máquina</a></li>
 
           <li><a href="quiz.html">Quiz</a></li>
+
+          <li><a href="#guia-verificacao">Guia</a></li>
+
+          <li><a href="sobre.html">Sobre</a></li>
         </ul>
+
+        <div class="nav-buttons">
+          <button
+            id="darkModeBtn"
+            type="button"
+            aria-label="Alternar modo escuro"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <button id="menuBtn" type="button" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
       </nav>
     </header>
 
-    <section class="simulador-page">
-      <h1>Simulador de Alucinação de IA</h1>
+    <!-- HERO -->
 
-      <p>
-        Cole abaixo um texto gerado por IA e descubra possíveis sinais de
-        informações duvidosas.
-      </p>
+    <section class="page-header simulador-hero">
+      <div class="container">
+        <h1>Simulador de Alucinação de IA</h1>
 
-      <textarea
-        id="texto"
-        placeholder="Cole aqui o texto para análise..."
-      ></textarea>
-
-      <button id="analisarBtn">Analisar Texto</button>
-
-      <div id="scoreBox">
-        <h2>Confiabilidade</h2>
-
-        <div id="score">100%</div>
+        <p>
+          Cole um texto gerado por inteligência artificial e descubra possíveis
+          sinais de informações inventadas, dados desatualizados ou afirmações
+          que precisam ser verificadas.
+        </p>
       </div>
-
-      <div id="resultado"></div>
     </section>
 
+    <!-- O QUE O SIMULADOR VERIFICA -->
+
+    <section class="risks">
+      <h2>O que o simulador verifica?</h2>
+
+      <div class="risk-list">
+        <div class="risk">
+          <h3>Datas e números específicos</h3>
+
+          <p>
+            Informações temporais e dados numéricos podem estar desatualizados
+            ou incorretos.
+          </p>
+        </div>
+
+        <div class="risk">
+          <h3>Fontes genéricas</h3>
+
+          <p>
+            Expressões como "estudos mostram" ou "especialistas afirmam" exigem
+            verificação.
+          </p>
+        </div>
+
+        <div class="risk">
+          <h3>Excesso de certeza</h3>
+
+          <p>
+            Afirmações absolutas podem indicar ausência de contexto ou
+            simplificações excessivas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULADOR -->
+
+    <section class="simulador-section">
+      <div class="simulador-grid">
+        <!-- TEXTO PARA ANÁLISE -->
+
+        <div class="default-card">
+          <h2>
+            <i class="fa-solid fa-paste"></i>
+
+            Texto para análise
+          </h2>
+
+          <textarea
+            id="texto"
+            aria-label="Texto para análise"
+            placeholder="Cole aqui um texto gerado por IA..."
+          ></textarea>
+
+          <div class="acoes-texto">
+            <button id="colarBtn" class="btn-secondary" type="button">
+              <i class="fa-solid fa-paste"></i>
+
+              Colar texto
+            </button>
+
+            <button id="limparBtn" class="btn-secondary" type="button">
+              <i class="fa-solid fa-trash"></i>
+
+              Limpar texto
+            </button>
+
+            <button id="analisarBtn" class="btn-primary" type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              Analisar texto
+            </button>
+          </div>
+        </div>
+
+        <!-- CONFIABILIDADE -->
+
+        <div class="default-card resultado-card">
+          <h2>
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Confiabilidade
+          </h2>
+
+          <div id="scoreBox">
+            <div id="score">0%</div>
+
+            <p>Nível estimado de confiança</p>
+          </div>
+
+          <div id="resultado">
+            <p>
+              Cole um texto e clique em
+              <strong>Analisar texto</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXEMPLOS DE TESTE -->
+
+    <section class="exemplos">
+      <div class="container">
+        <h2>Experimente exemplos prontos</h2>
+
+        <p class="section-subtitle">
+          Copie um dos textos abaixo e teste o simulador.
+        </p>
+
+        <div class="cards">
+          <!-- BAIXO RISCO -->
+
+<div class="card exemplo-card">
+  <span class="badge baixo">Baixo risco</span>
+
+  <p>
+    Segundo dados divulgados pelo IBGE em 2024, o uso da internet no Brasil
+    continua crescendo. Ainda assim, é importante verificar a data da pesquisa
+    e consultar a fonte original antes de utilizar os números em trabalhos
+    acadêmicos.
+  </p>
+
+  <button
+    class="copiar-exemplo"
+    type="button"
+    data-texto="Segundo dados divulgados pelo IBGE em 2024, o uso da internet no Brasil continua crescendo. Ainda assim, é importante verificar a data da pesquisa e consultar a fonte original antes de utilizar os números em trabalhos acadêmicos."
+  >
+    <i class="fa-solid fa-copy"></i>
+
+    Copiar exemplo
+  </button>
+</div>
+
+          <!-- MÉDIO RISCO -->
+
+          <div class="card exemplo-card">
+            <span class="badge medio">Médio risco</span>
+
+            <p id="textoMedio">
+              Estudos mostram que a inteligência artificial aumentará a
+              produtividade em todas as profissões até 2030. Especialistas
+              afirmam que essa tendência será inevitável.
+            </p>
+
+            <button
+              class="btn-secondary copiar-exemplo"
+              data-target="textoMedio"
+              type="button"
+            >
+              <i class="fa-solid fa-copy"></i>
+
+              Copiar exemplo
+            </button>
+          </div>
+
+          <!-- ALTO RISCO -->
+
+          <div class="card exemplo-card">
+            <span class="badge alto">Alto risco</span>
+
+            <p id="textoAlto">
+              Pesquisas indicam que 95% dos empregos serão substituídos por
+              inteligência artificial até 2035. Especialistas afirmam que isso
+              acontecerá com certeza e nunca houve dúvidas sobre esse resultado.
+            </p>
+
+            <button
+              class="btn-secondary copiar-exemplo"
+              data-target="textoAlto"
+              type="button"
+            >
+              <i class="fa-solid fa-copy"></i>
+
+              Copiar exemplo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIA DE VERIFICAÇÃO -->
+
+    <section class="guia-verificacao" id="guia-verificacao">
+      <div class="container">
+        <h2>Guia rápido de verificação</h2>
+
+        <p class="section-subtitle">
+          Antes de utilizar ou compartilhar informações geradas por IA, siga
+          estes passos.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-link"></i>
+
+            <h3>Verifique as fontes</h3>
+
+            <p>
+              Confirme se os artigos, autores e sites citados realmente existem.
+            </p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <h3>Confira as datas</h3>
+
+            <p>
+              Informações sobre eventos, leis e pesquisas podem estar
+              desatualizadas.
+            </p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-circle-question"></i>
+
+            <h3>Desconfie de certezas absolutas</h3>
+
+            <p>
+              Frases como "sempre", "nunca" e "comprovadamente" exigem atenção
+              extra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <img src="../img/logo.png" alt="Logo IA Consciente" loading="lazy" />
+
+      <h3>IA Consciente</h3>
+
+      <p>Projeto de Extensão da Universidade FAMINAS</p>
+
+      <p>Promovendo o uso responsável da Inteligência Artificial.</p>
+
+      <p>© <span id="anoAtual"></span></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+
     <script src="../js/script.js"></script>
+
     <script src="../js/simulador.js"></script>
   </body>
 </html>

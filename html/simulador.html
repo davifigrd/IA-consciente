@@ -8,19 +8,14 @@
     <title>Simulador de Alucinação | IA Consciente</title>
 
     <!-- FAVICON -->
-
     <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="../css/style.css" />
-
     <link rel="stylesheet" href="../css/simulador.css" />
 
     <!-- FONTES -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
@@ -29,7 +24,6 @@
     />
 
     <!-- ÍCONES -->
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -49,15 +43,10 @@
 
         <ul class="nav-links">
           <li><a href="index.html">Início</a></li>
-
           <li><a href="simulador.html">Simulador</a></li>
-
           <li><a href="turing.html">Humano x Máquina</a></li>
-
           <li><a href="quiz.html">Quiz</a></li>
-
           <li><a href="#guia-verificacao">Guia</a></li>
-
           <li><a href="sobre.html">Sobre</a></li>
         </ul>
 
@@ -198,39 +187,39 @@
         <h2>Experimente exemplos prontos</h2>
 
         <p class="section-subtitle">
-          Copie um dos textos abaixo e teste o simulador.
+          Clique em um dos exemplos abaixo para testá-lo automaticamente.
         </p>
 
         <div class="cards">
           <!-- BAIXO RISCO -->
 
-<div class="card exemplo-card">
-  <span class="badge baixo">Baixo risco</span>
+          <div class="card exemplo-card">
+            <span class="badge baixo">Baixo risco</span>
 
-  <p>
-    Segundo dados divulgados pelo IBGE em 2024, o uso da internet no Brasil
-    continua crescendo. Ainda assim, é importante verificar a data da pesquisa
-    e consultar a fonte original antes de utilizar os números em trabalhos
-    acadêmicos.
-  </p>
+            <p id="exemplo-baixo">
+              Segundo dados divulgados pelo IBGE em 2024, o uso da internet no
+              Brasil continua crescendo. Ainda assim, é importante verificar a
+              data da pesquisa e consultar a fonte original antes de utilizar os
+              números em trabalhos acadêmicos.
+            </p>
 
-  <button
-    class="copiar-exemplo"
-    type="button"
-    data-texto="Segundo dados divulgados pelo IBGE em 2024, o uso da internet no Brasil continua crescendo. Ainda assim, é importante verificar a data da pesquisa e consultar a fonte original antes de utilizar os números em trabalhos acadêmicos."
-  >
-    <i class="fa-solid fa-copy"></i>
+            <button
+              class="btn-secondary copiar-exemplo"
+              type="button"
+              data-target="exemplo-baixo"
+            >
+              <i class="fa-solid fa-paste"></i>
 
-    Copiar exemplo
-  </button>
-</div>
+              Testar exemplo
+            </button>
+          </div>
 
           <!-- MÉDIO RISCO -->
 
           <div class="card exemplo-card">
             <span class="badge medio">Médio risco</span>
 
-            <p id="textoMedio">
+            <p id="exemplo-medio">
               Estudos mostram que a inteligência artificial aumentará a
               produtividade em todas as profissões até 2030. Especialistas
               afirmam que essa tendência será inevitável.
@@ -238,12 +227,12 @@
 
             <button
               class="btn-secondary copiar-exemplo"
-              data-target="textoMedio"
               type="button"
+              data-target="exemplo-medio"
             >
-              <i class="fa-solid fa-copy"></i>
+              <i class="fa-solid fa-paste"></i>
 
-              Copiar exemplo
+              Testar exemplo
             </button>
           </div>
 
@@ -252,7 +241,7 @@
           <div class="card exemplo-card">
             <span class="badge alto">Alto risco</span>
 
-            <p id="textoAlto">
+            <p id="exemplo-alto">
               Pesquisas indicam que 95% dos empregos serão substituídos por
               inteligência artificial até 2035. Especialistas afirmam que isso
               acontecerá com certeza e nunca houve dúvidas sobre esse resultado.
@@ -260,64 +249,18 @@
 
             <button
               class="btn-secondary copiar-exemplo"
-              data-target="textoAlto"
               type="button"
+              data-target="exemplo-alto"
             >
-              <i class="fa-solid fa-copy"></i>
+              <i class="fa-solid fa-paste"></i>
 
-              Copiar exemplo
+              Testar exemplo
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GUIA DE VERIFICAÇÃO -->
-
-    <section class="guia-verificacao" id="guia-verificacao">
-      <div class="container">
-        <h2>Guia rápido de verificação</h2>
-
-        <p class="section-subtitle">
-          Antes de utilizar ou compartilhar informações geradas por IA, siga
-          estes passos.
-        </p>
-
-        <div class="cards">
-          <div class="card">
-            <i class="fa-solid fa-link"></i>
-
-            <h3>Verifique as fontes</h3>
-
-            <p>
-              Confirme se os artigos, autores e sites citados realmente existem.
-            </p>
-          </div>
-
-          <div class="card">
-            <i class="fa-solid fa-calendar-days"></i>
-
-            <h3>Confira as datas</h3>
-
-            <p>
-              Informações sobre eventos, leis e pesquisas podem estar
-              desatualizadas.
-            </p>
-          </div>
-
-          <div class="card">
-            <i class="fa-solid fa-circle-question"></i>
-
-            <h3>Desconfie de certezas absolutas</h3>
-
-            <p>
-              Frases como "sempre", "nunca" e "comprovadamente" exigem atenção
-              extra.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FOOTER -->
 
@@ -326,17 +269,12 @@
 
       <h3>IA Consciente</h3>
 
-      <p>Projeto de Extensão da Universidade FAMINAS</p>
-
-      <p>Promovendo o uso responsável da Inteligência Artificial.</p>
-
-      <p>© <span id="anoAtual"></span></p>
+      <p>Projeto de Extensão da Universidade FAMINAS • 2026.1</p>
     </footer>
 
     <!-- SCRIPTS -->
 
     <script src="../js/script.js"></script>
-
     <script src="../js/simulador.js"></script>
   </body>
 </html>

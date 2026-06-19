@@ -2,274 +2,227 @@
    ELEMENTOS
 ================================== */
 
-const textoInput =
-  document.getElementById("texto");
-
-const analisarBtn =
-  document.getElementById("analisarBtn");
-
-const colarBtn =
-  document.getElementById("colarBtn");
-
-const resultado =
-  document.getElementById("resultado");
-
-const score =
-  document.getElementById("score");
+const textoInput = document.getElementById("texto");
+const analisarBtn = document.getElementById("analisarBtn");
+const colarBtn = document.getElementById("colarBtn");
+const limparBtn = document.getElementById("limparBtn");
+const resultado = document.getElementById("resultado");
+const score = document.getElementById("score");
+const resultadoCard = document.querySelector(".resultado-card");
+const botoesExemplo = document.querySelectorAll(".copiar-exemplo");
 
 /* ==================================
    ESTADO INICIAL
 ================================== */
 
-score.textContent = "0%";
+function resetUI() {
+  score.textContent = "0%";
+  score.style.color = "var(--secondary)";
 
-resultado.innerHTML = `
-  <p>
-    Cole um texto e clique em
-    <strong>Analisar texto</strong>.
-  </p>
-`;
+  resultadoCard.classList.remove(
+    "risco-baixo",
+    "risco-medio",
+    "risco-alto"
+  );
+
+  resultado.innerHTML = `
+    <p>
+      Cole um texto e clique em
+      <strong>Analisar texto</strong>.
+    </p>
+  `;
+}
+
+resetUI();
+
+/* ==================================
+   ANIMAÇÃO DA PORCENTAGEM
+================================== */
+
+function animarScore(valorFinal) {
+  const valorInicial = parseInt(score.textContent) || 0;
+
+  const duracao = 1800;
+  const inicio = performance.now();
+
+  function atualizar(tempoAtual) {
+    const progresso = Math.min((tempoAtual - inicio) / duracao, 1);
+
+    const valorAtual = Math.round(
+      valorInicial + (valorFinal - valorInicial) * progresso
+    );
+
+    score.textContent = `${valorAtual}%`;
+
+    if (progresso < 1) {
+      requestAnimationFrame(atualizar);
+    }
+  }
+
+  requestAnimationFrame(atualizar);
+}
 
 /* ==================================
    ANÁLISE DO TEXTO
 ================================== */
 
 function analisarTexto() {
-
-  const texto =
-    textoInput.value.trim();
+  const texto = textoInput.value.trim();
 
   resultado.innerHTML = "";
 
-  if (texto === "") {
-
-    score.textContent = "0%";
-
-    score.style.color =
-      "var(--secondary)";
+  if (!texto) {
+    resetUI();
 
     resultado.innerHTML = `
-      <div class="alerta">
+      <div class="alerta mostrar">
         Insira um texto para realizar a análise.
       </div>
     `;
 
     return;
-
   }
 
   let confiabilidade = 100;
-
   const alertas = [];
 
   const padroes = [
-
     {
       regex: /\b\d{4}\b/g,
       pontos: 15,
-      mensagem:
-        "Verifique se as datas mencionadas estão atualizadas."
+      mensagem: "Verifique se as datas mencionadas estão atualizadas."
     },
-
     {
       regex: /estudos mostram|pesquisas indicam|especialistas afirmam/gi,
       pontos: 30,
-      mensagem:
-        "Foram encontradas referências genéricas sem fonte específica."
+      mensagem: "Foram encontradas referências genéricas sem fonte específica."
     },
-
     {
       regex: /sempre|nunca|todos|ninguém|garantido|com certeza/gi,
       pontos: 35,
-      mensagem:
-        "Foram identificadas afirmações absolutas."
+      mensagem: "Foram identificadas afirmações absolutas."
     },
-
     {
       regex: /revolucionário|incrível|perfeito|infalível|extraordinário/gi,
       pontos: 20,
-      mensagem:
-        "O texto utiliza linguagem excessivamente persuasiva."
+      mensagem: "O texto utiliza linguagem excessivamente persuasiva."
     },
-
     {
       regex: /\b\d+%/g,
       pontos: 10,
-      mensagem:
-        "Verifique a origem dos dados estatísticos apresentados."
+      mensagem: "Verifique a origem dos dados estatísticos apresentados."
     }
-
   ];
 
-  padroes.forEach(padrao => {
-
+  padroes.forEach((padrao) => {
     if (padrao.regex.test(texto)) {
-
-      confiabilidade -=
-        padrao.pontos;
-
-      alertas.push(
-        padrao.mensagem
-      );
-
+      confiabilidade -= padrao.pontos;
+      alertas.push(padrao.mensagem);
     }
-
   });
 
-  confiabilidade = Math.max(
-    confiabilidade,
-    0
+  confiabilidade = Math.max(confiabilidade, 0);
+
+  resultadoCard.classList.remove(
+    "risco-baixo",
+    "risco-medio",
+    "risco-alto"
   );
 
-  score.textContent =
-    `${confiabilidade}%`;
+  let corAtual = "";
 
   if (confiabilidade >= 80) {
-
-    score.style.color =
-      "#22c1b8";
-
+    corAtual = "#22c1b8";
+    resultadoCard.classList.add("risco-baixo");
+  } else if (confiabilidade >= 50) {
+    corAtual = "#f59e0b";
+    resultadoCard.classList.add("risco-medio");
+  } else {
+    corAtual = "#ff5757";
+    resultadoCard.classList.add("risco-alto");
   }
-  else if (confiabilidade >= 50) {
 
-    score.style.color =
-      "#f59e0b";
+  score.style.color = corAtual;
 
-  }
-  else {
-
-    score.style.color =
-      "#ff5757";
-
-  }
+  animarScore(confiabilidade);
 
   if (alertas.length === 0) {
-
-    resultado.innerHTML = `
-      <div class="alerta">
-        Nenhum padrão de risco foi encontrado.
-        Ainda assim, verifique as informações
-        em fontes confiáveis.
-      </div>
+    const alerta = document.createElement("div");
+    alerta.className = "alerta mostrar";
+    alerta.innerHTML = `
+      Nenhum padrão de risco foi encontrado.
+      Ainda assim, verifique as informações em fontes confiáveis.
     `;
-
+    resultado.appendChild(alerta);
     return;
-
   }
 
-  alertas.forEach(alerta => {
+  alertas.forEach((mensagem, index) => {
+    const alerta = document.createElement("div");
 
-    resultado.innerHTML += `
-      <div class="alerta">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        ${alerta}
-      </div>
+    alerta.className = "alerta";
+    alerta.style.borderLeftColor = corAtual;
+    alerta.style.color = corAtual;
+
+    alerta.innerHTML = `
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      ${mensagem}
     `;
 
-  });
+    resultado.appendChild(alerta);
 
+    setTimeout(() => {
+      alerta.classList.add("mostrar");
+    }, index * 450);
+  });
 }
 
 /* ==================================
    EVENTOS
 ================================== */
 
-if (analisarBtn) {
+analisarBtn?.addEventListener("click", analisarTexto);
 
-  analisarBtn.addEventListener(
-    "click",
-    analisarTexto
-  );
+colarBtn?.addEventListener("click", async () => {
+  try {
+    const textoClipboard = await navigator.clipboard.readText();
+    textoInput.value = textoClipboard;
+    analisarTexto();
+  } catch {
+    alert("Não foi possível acessar a área de transferência.");
+  }
+});
 
-}
-
-if (colarBtn) {
-
-  colarBtn.addEventListener(
-    "click",
-    async () => {
-
-      try {
-
-        const textoClipboard =
-          await navigator.clipboard.readText();
-
-        textoInput.value =
-          textoClipboard;
-
-      }
-      catch {
-
-        alert(
-          "Não foi possível acessar a área de transferência."
-        );
-
-      }
-
-    }
-  );
-
-}
-const limparBtn =
-  document.getElementById(
-    "limparBtn"
-  );
-
-if (limparBtn) {
-
-  limparBtn.addEventListener(
-    "click",
-    () => {
-
-      texto.value = "";
-
-      score.textContent = "0%";
-
-      score.style.color =
-        "var(--secondary)";
-
-      resultado.innerHTML = `
-        <p>
-          Cole um texto e clique em
-          <strong>Analisar texto</strong>.
-        </p>
-      `;
-
-      texto.focus();
-
-    }
-  );
-
-}
+limparBtn?.addEventListener("click", () => {
+  textoInput.value = "";
+  resetUI();
+  textoInput.focus();
+});
 
 /* ==================================
-   COPIAR EXEMPLOS
+   EXEMPLOS PRONTOS
 ================================== */
 
-const botoesExemplo = document.querySelectorAll(".copiar-exemplo");
-
 botoesExemplo.forEach((botao) => {
-  botao.addEventListener("click", async () => {
+  botao.addEventListener("click", () => {
     const id = botao.dataset.target;
 
-    const texto = document.getElementById(id).textContent.trim();
+    const textoExemplo = document
+      .getElementById(id)
+      .textContent
+      .replace(/\s+/g, " ")
+      .trim();
 
-    try {
-      await navigator.clipboard.writeText(texto);
+    textoInput.value = textoExemplo;
 
-      botao.innerHTML = `
-        <i class="fa-solid fa-check"></i>
-        Copiado
-      `;
+    window.scrollTo({
+      top: document.querySelector(".simulador-section")?.offsetTop - 100,
+      behavior: "smooth"
+    });
 
-      setTimeout(() => {
-        botao.innerHTML = `
-          <i class="fa-solid fa-copy"></i>
-          Copiar exemplo
-        `;
-      }, 2000);
-    } catch {
-      alert("Não foi possível copiar o texto.");
-    }
+    setTimeout(() => {
+      analisarTexto();
+      textoInput.focus();
+    }, 500);
   });
 });

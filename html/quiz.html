@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Humano x Máquina | IA Consciente</title>
+    <title>Quiz Consciência de IA | IA Consciente</title>
 
     <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
 
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/turing.css" />
+    <link rel="stylesheet" href="../css/quiz.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,49 +54,43 @@
       </nav>
     </header>
 
-    <section class="page-header turing-hero">
+    <section class="page-header quiz-hero">
       <div class="container">
-        <h1>Desafio: Humano x Máquina</h1>
+        <h1>Quiz: Consciência Crítica</h1>
         <p class="hero-subtitle">
-          Analise os pares de textos abaixo. Um deles foi inteiramente escrito
-          por uma pessoa e o outro foi gerado por Inteligência Artificial. Você
-          consegue identificar o robô?
+          Descubra o seu nível de maturidade, segurança e riscos reais ao
+          utilizar Inteligências Artificiais na sua rotina de estudos e
+          trabalhos acadêmicos.
         </p>
       </div>
     </section>
 
-    <div class="turing-container">
-      <div class="painel-gamificado" id="painel-status" style="display: none">
+    <div class="quiz-container">
+      <div class="painel-gamificado" id="painel-status-quiz">
         <div class="status-item">
-          <div class="status-icone"><i class="fa-solid fa-gamepad"></i></div>
+          <div class="status-icone"><i class="fa-solid fa-chart-line"></i></div>
           <div class="status-info">
-            <span class="status-label">Rodada</span>
-            <span class="status-valor" id="rodada-atual">1/3</span>
+            <span class="status-label">Progresso</span>
+            <span class="status-valor" id="pergunta-atual-txt">1/10</span>
           </div>
         </div>
 
         <div class="status-item">
           <div class="status-icone score-icon">
-            <i class="fa-solid fa-award"></i>
+            <i class="fa-solid fa-bolt"></i>
           </div>
           <div class="status-info">
-            <span class="status-label">Acertos</span>
-            <span class="status-valor" id="acertos-turing">0</span>
+            <span class="status-label">Pontos de Consciência</span>
+            <span class="status-valor" id="pontos-quiz-txt">0</span>
           </div>
         </div>
 
-        <div class="barra-progresso-turing">
-          <div id="progresso-preenchido-turing"></div>
+        <div class="barra-progresso-quiz">
+          <div id="progresso-preenchido-quiz"></div>
         </div>
       </div>
 
-      <div id="jogo-turing"></div>
-
-      <div class="acoes-turing">
-        <button id="btn-proximo-turing" class="btn-primary" type="button">
-          Próxima Rodada <i class="fa-solid fa-arrow-right espaco-seta"></i>
-        </button>
-      </div>
+      <div id="quiz-dinamico"></div>
     </div>
 
     <footer>
@@ -106,6 +100,6 @@
     </footer>
 
     <script src="../js/script.js"></script>
-    <script src="../js/turing.js"></script>
+    <script src="../js/quiz.js"></script>
   </body>
 </html>

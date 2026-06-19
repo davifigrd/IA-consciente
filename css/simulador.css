@@ -233,33 +233,50 @@ textarea:focus {
 .resultado-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   text-align: center;
+
+  min-height: 420px;
+
+  padding: 30px;
 }
 
 /* ==================================
    INDICADOR DE CONFIABILIDADE
 ================================== */
-
 #scoreBox {
-  margin: 35px 0;
+  margin: 5px 0 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
 }
 
 #score {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 800;
-
   line-height: 1;
 
   color: var(--secondary);
+
+  margin: 0;
 }
 
 #scoreBox p {
-  margin-top: 15px;
+  margin: 0;
 
   color: var(--gray);
+
+  font-size: 0.95rem;
+}
+
+#scoreBox p {
+  color: var(--gray);
+
+  font-size: 0.95rem;
 }
 
 .dark #scoreBox p {
@@ -267,21 +284,92 @@ textarea:focus {
 }
 
 /* ==================================
+   ÁREA DOS RESULTADOS
+================================== */
+
+#resultado {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+/* ==================================
    ALERTAS
 ================================== */
 
 .alerta {
-  padding: 15px;
+  display: flex;
+  align-items: flex-start;
 
-  border-radius: 12px;
+  gap: 10px;
 
-  background: rgba(255, 87, 87, 0.12);
+  padding: 10px 12px;
 
-  border-left: 5px solid #ff5757;
+  font-size: 0.88rem;
+  line-height: 1.35;
+
+  border-radius: 10px;
+
+  opacity: 0;
+  transform: translateX(-20px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.alerta.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.alerta i {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  font-size: 0.9rem;
 }
 
 .dark .alerta {
   background: rgba(255, 87, 87, 0.15);
+}
+
+/* ==================================
+   CORES DOS ALERTAS
+================================== */
+
+.resultado-card.risco-baixo .alerta {
+  background: rgba(34, 193, 184, 0.12);
+  border-left-color: #22c1b8;
+  color: #22c1b8;
+}
+
+.resultado-card.risco-medio .alerta {
+  background: rgba(245, 158, 11, 0.12);
+  border-left-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.resultado-card.risco-alto .alerta {
+  background: rgba(255, 87, 87, 0.12);
+  border-left-color: #ff5757;
+  color: #ff5757;
+}
+
+.resultado-card.risco-baixo .alerta i {
+  color: #22c1b8;
+}
+
+.resultado-card.risco-medio .alerta i {
+  color: #f59e0b;
+}
+
+.resultado-card.risco-alto .alerta i {
+  color: #ff5757;
 }
 
 /* ==================================
@@ -409,20 +497,6 @@ textarea:focus {
 }
 
 /* ==================================
-   GUIA DE VERIFICAÇÃO
-================================== */
-
-.guia-verificacao {
-  padding: 80px 8%;
-
-  background: #eef6fb;
-}
-
-.dark .guia-verificacao {
-  background: #0b1830;
-}
-
-/* ==================================
    RESPONSIVIDADE
 ================================== */
 
@@ -499,4 +573,39 @@ textarea:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+/* ==================================
+   ANIMAÇÕES
+================================== */
+
+@keyframes entradaAlerta {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.alerta {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  font-size: 0.88rem;
+  line-height: 1.35;
+
+  border-radius: 10px;
+
+  opacity: 0;
+}
+
+.alerta.mostrar {
+  animation: entradaAlerta 0.8s ease forwards;
 }

@@ -1,117 +1,387 @@
-/* ==========================
-   TURING TEST
-========================== */
+/* ==================================
+   HERO & TEXTOS
+================================== */
+.turing-hero {
+  padding-top: 170px;
+  padding-bottom: 80px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary),
+    var(--primary-light)
+  );
+  color: var(--white);
+}
 
-.turing-page {
-  max-width: 1200px;
+.turing-hero h1 {
+  color: var(--white) !important;
+}
 
+.hero-subtitle {
+  color: var(--white) !important;
+  opacity: 1 !important;
+  font-weight: 400;
+  max-width: 800px;
   margin: auto;
-
-  padding-top: 150px;
 }
 
-.turing-page h1 {
-  text-align: center;
-
-  margin-bottom: 20px;
+.dark .turing-hero {
+  background: linear-gradient(135deg, #07162d, #0b1830);
 }
 
-.turing-page p {
-  text-align: center;
+/* ==================================
+   CONTAINER DO JOGO
+================================== */
+.turing-container {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 5%;
 }
 
-.placar {
-  margin: 30px auto;
+/* ==================================
+   PAINEL GAMIFICADO (PLACAR)
+================================== */
+.painel-gamificado {
+  background: var(--white);
+  border: 2px solid #dbe4f0;
+  border-radius: 20px;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
 
-  width: 250px;
+.dark .painel-gamificado {
+  background: #0b1830;
+  border-color: #1c315a;
+}
 
-  text-align: center;
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+}
 
-  background: #22c1b8;
-
-  color: white;
-
-  padding: 15px;
-
+.status-icone {
+  width: 50px;
+  height: 50px;
+  background: rgba(14, 42, 90, 0.08);
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
 
+.status-icone.score-icon {
+  background: rgba(34, 193, 184, 0.12);
+  color: #22c1b8;
+}
+
+.dark .status-icone {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+}
+
+.dark .status-icone.score-icon {
+  background: rgba(34, 193, 184, 0.15);
+  color: var(--secondary);
+}
+
+.status-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.status-valor {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.dark .status-valor {
+  color: var(--white);
+}
+
+/* BARRA DE PROGRESSO */
+.barra-progresso-turing {
+  flex: 1;
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dark .barra-progresso-turing {
+  background: #1c315a;
+}
+
+#progresso-preenchido-turing {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================================
+   TELA DE SELEÇÃO DE DIFICULDADE
+================================== */
+.dificuldade-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
+.btn-dificuldade {
+  padding: 18px 25px;
+  border-radius: 15px;
+  border: 2px solid #dbe4f0;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s ease;
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+.dark .btn-dificuldade {
+  background: #0b1830;
+  border-color: #1c315a;
+  color: var(--white);
+}
+
+.btn-dificuldade.facil:hover {
+  border-color: #22c1b8;
+  background: rgba(34, 193, 184, 0.05);
+}
+.btn-dificuldade.medio:hover {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+.btn-dificuldade.dificil:hover {
+  border-color: #ff5757;
+  background: rgba(255, 87, 87, 0.05);
+}
+
+.btn-dificuldade i {
   font-size: 1.2rem;
 }
+.btn-dificuldade.facil i {
+  color: #22c1b8;
+}
+.btn-dificuldade.medio i {
+  color: #f59e0b;
+}
+.btn-dificuldade.dificil i {
+  color: #ff5757;
+}
 
-.textos {
+/* ==================================
+   CARDS DE JOGO
+================================== */
+.rodada-box {
+  animation: entradaCards 0.5s ease forwards;
+}
+
+.rodada-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.dark .rodada-box h3 {
+  color: var(--white);
+}
+
+.opcoes-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
-  gap: 30px;
-
-  margin-top: 40px;
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
-.texto-box {
-  background: white;
-
+.opcao-card {
+  background: var(--white);
   padding: 30px;
-
   border-radius: 20px;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.texto-box h2 {
-  margin-bottom: 15px;
-}
-
-.texto-box button {
-  margin-top: 20px;
-
-  width: 100%;
-
-  padding: 15px;
-
-  border: none;
-
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-
-  border-radius: 12px;
-
-  background: #0e2a5a;
-
-  color: white;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid #dbe4f0;
 }
 
-#resultadoTuring {
-  margin-top: 40px;
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  background: white;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+.dark .opcao-card {
+  background: #0b1830;
+  border-color: #1c315a;
 }
 
-#proximaRodada {
-  margin-top: 30px;
+.opcao-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary);
+  box-shadow: 0 12px 24px rgba(34, 193, 184, 0.15);
+}
 
-  width: 100%;
+.opcao-card strong {
+  color: var(--primary);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-  padding: 15px;
+.dark .opcao-card strong {
+  color: var(--secondary);
+}
 
-  border: none;
+.opcao-card p {
+  line-height: 1.6;
+  color: var(--gray);
+  font-size: 0.98rem;
+}
 
-  background: #22c1b8;
+.dark .opcao-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
 
-  color: white;
+.opcao-card.revelada-ia {
+  border-color: #22c1b8;
+  background: rgba(34, 193, 184, 0.03);
+}
+.opcao-card.revelada-humano {
+  border-color: var(--primary);
+  background: rgba(14, 42, 90, 0.02);
+}
 
-  border-radius: 15px;
+/* ==================================
+   FEEDBACK BOX
+================================== */
+.feedback-box {
+  padding: 22px;
+  border-radius: 16px;
+  margin-top: 25px;
+  font-size: 1rem;
+  line-height: 1.55;
+  display: none;
+  animation: entradaCards 0.4s ease forwards;
+}
 
+.feedback-correto {
+  background: rgba(34, 193, 184, 0.12);
+  border-left: 6px solid #22c1b8;
+  color: #1a948d;
+}
+.dark .feedback-correto {
+  color: #22c1b8;
+  background: rgba(34, 193, 184, 0.15);
+}
+.feedback-errado {
+  background: rgba(255, 87, 87, 0.12);
+  border-left: 6px solid #ff5757;
+  color: #d64545;
+}
+.dark .feedback-errado {
+  color: #ff5757;
+  background: rgba(255, 87, 87, 0.15);
+}
+
+.feedback-box i {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+/* AJUSTE DO ESPAÇAMENTO DA SETA */
+.espaco-seta {
+  margin-left: 12px;
+}
+
+/* ==================================
+   BOTÕES E TELAS FINAIS
+================================== */
+.acoes-turing {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+#btn-proximo-turing {
+  display: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
+  border: none;
+  background: var(--primary);
+  color: white;
+  transition: 0.3s;
 }
 
-@media (max-width: 900px) {
-  .textos {
+.dark #btn-proximo-turing {
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+#btn-proximo-turing:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.center-card {
+  background: var(--white);
+  padding: 50px 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid #dbe4f0;
+  animation: entradaCards 0.6s ease;
+}
+
+.dark .center-card {
+  background: #0b1830;
+  border-color: #1c315a;
+}
+
+@keyframes entradaCards {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .opcoes-grid {
     grid-template-columns: 1fr;
+  }
+  .painel-gamificado {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
   }
 }

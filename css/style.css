@@ -1,7 +1,6 @@
 /* ==================================================
-   RESET
+   RESET & CONFIGURAÇÕES GLOBAIS
 ================================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -12,31 +11,61 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Força a remoção de sublinhados e marcadores diretamente nas tags raiz */
+a {
+  text-decoration: none !important;
+}
+
+ul,
+ol,
+li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: #f4f8fb;
   color: #1e293b;
   overflow-x: hidden;
   line-height: 1.7;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
+/* Transição global e suave para todos os elementos do projeto */
+.card,
+.risk,
+.case-card,
+.stat-card,
+.default-card,
+.benefits-grid div,
+.guia-card,
+.caso-card-real,
+.cta-interativa-secao,
+header,
+footer,
+h1,
+h2,
+h3,
+p,
+i,
+a,
+span,
+div {
+  transition:
+    background 0.5s ease,
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* ==================================================
-   VARIÁVEIS
+   VARIÁVEIS DE AMBIENTE
 ================================================== */
-
 :root {
   --primary: #0e2a5a;
   --primary-dark: #07162d;
@@ -47,107 +76,32 @@ ul {
   --secondary-dark: #17a79f;
 
   --white: #ffffff;
-
   --dark: #07162d;
-
   --gray: #6b7280;
   --gray-light: #94a3b8;
-
   --bg: #f4f8fb;
-
   --card: #ffffff;
 
   --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.08);
-
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
-
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
-
   --transition: 0.3s;
 }
 
-.dark .nav-links.ativo {
-  background: #11213f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dark .nav-links.ativo a {
-  color: white;
-}
-
-.dark .nav-links.ativo a:hover {
-  color: var(--secondary);
-}
-
-.dark #menuBtn {
-  color: white;
-}
-
-.dark .hero {
-  background: linear-gradient(135deg, #07162d, #081120);
-}
-.dark .logo-area img {
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
 /* ==================================================
-   CONTAINER GLOBAL
+   ESTRUTURA E LAYOUT GLOBAL
 ================================================== */
-
 .container {
   max-width: 1300px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* ==================================================
-   UTILITÁRIOS
-================================================== */
-
-.text-center {
-  text-align: center;
+section {
+  padding: 100px 8%;
 }
 
-.hidden {
-  display: none;
-}
-
-.mt-1 {
-  margin-top: 10px;
-}
-
-.mt-2 {
-  margin-top: 20px;
-}
-
-.mt-3 {
-  margin-top: 30px;
-}
-
-.mt-4 {
-  margin-top: 40px;
-}
-
-.mb-1 {
-  margin-bottom: 10px;
-}
-
-.mb-2 {
-  margin-bottom: 20px;
-}
-
-.mb-3 {
-  margin-bottom: 30px;
-}
-
-.mb-4 {
-  margin-bottom: 40px;
-}
-
-/* ==================================================
-   TÍTULOS GLOBAIS
-================================================== */
-
+section h2,
 .section-title {
   text-align: center;
   font-size: 2.8rem;
@@ -163,98 +117,74 @@ ul {
   color: var(--gray);
 }
 
-/* ==================================================
-   DARK MODE
-================================================== */
-
-.dark {
-  background: #081120;
-  color: white;
+/* Grids Padronizados */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-.dark header {
-  background: rgba(8, 17, 32, 0.92);
+/* Utilitários de Margem */
+.text-center {
+  text-align: center;
 }
-
-.dark .logo-area span {
-  color: white;
+.hidden {
+  display: none;
 }
-
-.dark .nav-links a {
-  color: white;
+.mt-1 {
+  margin-top: 10px;
 }
-
-.dark .card,
-.dark .risk,
-.dark .case-card,
-.dark .stat-card,
-.dark .default-card {
-  background: #11213f;
-  color: white;
+.mt-2 {
+  margin-top: 20px;
 }
-
-.dark .benefits-grid div {
-  background: #11213f;
+.mt-3 {
+  margin-top: 30px;
 }
-
-.dark footer {
-  background: #050d1a;
+.mt-4 {
+  margin-top: 40px;
 }
-
-.dark .about {
-  color: white;
+.mb-1 {
+  margin-bottom: 10px;
 }
-
-.dark .cta {
-  background: linear-gradient(135deg, #07162d, #0e2a5a);
+.mb-2 {
+  margin-bottom: 20px;
 }
-.dark .cases {
-  background: #0b1830;
+.mb-3 {
+  margin-bottom: 30px;
 }
-
-.dark .cases h2 {
-  color: white;
-}
-
-.dark h2 {
-  color: white;
+.mb-4 {
+  margin-bottom: 40px;
 }
 
 /* ==================================================
-   HEADER
+   HEADER & NAVEGAÇÃO
 ================================================== */
-
 header {
   width: 100%;
-
   position: fixed;
-
   top: 0;
-
   z-index: 1000;
-
   backdrop-filter: blur(15px);
-
   background: rgba(255, 255, 255, 0.85);
-
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* ==================================================
-   NAVBAR
-================================================== */
-
 .navbar {
   max-width: 1300px;
-
   margin: auto;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   padding: 18px 40px;
 }
 
@@ -262,9 +192,9 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
   color: inherit;
 }
+
 .logo-area img {
   width: 55px;
   height: 55px;
@@ -276,17 +206,13 @@ header {
 
 .nav-links {
   display: flex;
-
   gap: 30px;
 }
 
 .nav-links a {
   color: var(--primary);
-
   font-weight: 500;
-
   position: relative;
-
   transition: var(--transition);
 }
 
@@ -296,19 +222,12 @@ header {
 
 .nav-links a::after {
   content: "";
-
   position: absolute;
-
   left: 0;
-
   bottom: -5px;
-
   width: 0;
-
   height: 2px;
-
   background: var(--secondary);
-
   transition: 0.3s;
 }
 
@@ -316,23 +235,21 @@ header {
   width: 100%;
 }
 
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 #darkModeBtn {
   border: none;
-
   width: 45px;
-
   height: 45px;
-
   border-radius: 50%;
-
   cursor: pointer;
-
   background: var(--secondary);
-
   color: white;
-
   font-size: 1rem;
-
   transition: 0.3s;
 }
 
@@ -340,359 +257,217 @@ header {
   transform: rotate(15deg);
 }
 
-.nav-buttons {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-}
-
 #menuBtn {
   display: none;
-
   border: none;
-
   background: transparent;
-
   cursor: pointer;
-
   font-size: 1.5rem;
-
   color: var(--primary);
 }
 
 /* ==================================================
-   HERO
+   HERO & BOTÕES PRINCIPAIS
 ================================================== */
-
 .hero {
   min-height: 100vh;
-
   display: flex;
-
   align-items: center;
-
   padding: 120px 8% 50px;
-
   background: linear-gradient(135deg, #0e2a5a, #22c1b8);
-
   position: relative;
-
   overflow: hidden;
-
   padding-bottom: 120px;
 }
 
 .hero::before {
   content: "";
-
   position: absolute;
-
   width: 500px;
-
   height: 500px;
-
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.08);
-
   top: -200px;
-
   right: -150px;
 }
 
 .hero::after {
   content: "";
-
   position: absolute;
-
   width: 350px;
-
   height: 350px;
-
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.05);
-
   bottom: -100px;
-
   left: -100px;
 }
 
 .hero-content {
   max-width: 1300px;
-
   margin: auto;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 50px;
-
   position: relative;
-
   z-index: 2;
 }
 
 .hero-text {
   flex: 1;
-
   color: white;
 }
 
 .hero-text h1 {
   font-size: 4rem;
-
   line-height: 1.2;
-
   margin-bottom: 25px;
 }
 
 .hero-text p {
   font-size: 1.15rem;
-
   max-width: 650px;
-
   margin-bottom: 30px;
 }
 
 .hero-image {
   flex: 1;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
 
 .hero-image img {
   width: 400px;
-
   border-radius: 50%;
-
   background: white;
-
   padding: 15px;
-
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-
   animation: float 4s ease-in-out infinite;
 }
 
-/* ==================================================
-   BOTÕES
-================================================== */
-
 .hero-buttons {
   display: flex;
-
   gap: 20px;
-
   flex-wrap: wrap;
 }
 
 .btn-primary {
   display: inline-block;
-
   padding: 15px 30px;
-
   border-radius: 50px;
-
   background: white;
-
   color: var(--primary);
-
   font-weight: 700;
-
-  transition: 0.3s;
 }
 
 .btn-primary:hover {
   transform: translateY(-5px);
-
   box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
   display: inline-block;
-
   padding: 15px 30px;
-
   border-radius: 50px;
-
   border: 2px solid white;
-
   color: white;
-
-  transition: 0.3s;
 }
 
 .btn-secondary:hover {
   background: white;
-
   color: var(--primary);
 }
 
-/* ==================================================
-   HEADER PÁGINAS INTERNAS
-================================================== */
-
 .page-header {
   padding-top: 170px;
-
   text-align: center;
 }
 
 .page-header h1 {
   font-size: 3rem;
-
   color: var(--primary);
 }
 
 .page-header p {
   max-width: 800px;
-
   margin: 20px auto;
-
   color: var(--gray);
 }
 
 /* ==================================================
-   ESTATÍSTICAS
+   COMPONENTES E ELEMENTOS REUTILIZÁVEIS
 ================================================== */
+.about {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
 
+.about p {
+  margin-top: 20px;
+  line-height: 1.9;
+}
+
+/* Estatísticas */
 .stats {
   max-width: 1200px;
-
   margin: -60px auto 100px;
-
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 25px;
-
   padding: 0 30px;
-
   position: relative;
-
   z-index: 10;
 }
 
 .stat-card {
   background: white;
-
   padding: 40px;
-
   border-radius: 20px;
-
   text-align: center;
-
   box-shadow: var(--shadow-md);
-
-  transition: 0.3s;
 }
 
 .stat-card h2 {
   font-size: 3rem;
-
   color: var(--secondary);
-
   margin-bottom: 10px;
-}
-
-.stat-card p {
-  margin-top: 0;
-}
-
-.stat-card:hover {
-  transform: translateY(-8px);
-}
-
-.stat-card h2 {
-  font-size: 3rem;
-
-  color: var(--secondary);
 }
 
 .stat-card p {
   margin-top: 10px;
 }
 
-/* ==================================================
-   SEÇÕES
-================================================== */
-
-section {
-  padding: 100px 8%;
+.stat-card:hover {
+  transform: translateY(-8px);
 }
 
-section h2 {
-  text-align: center;
-
-  font-size: 2.6rem;
-
-  color: var(--primary);
-
-  margin-bottom: 30px;
-}
-
-.about {
-  max-width: 1000px;
-
-  margin: auto;
-
-  text-align: center;
-}
-
-.about p {
-  margin-top: 20px;
-
-  line-height: 1.9;
-}
-
-/* ==================================================
-   CARDS
-================================================== */
-
+/* Cards Tradicionais */
 .cards {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 30px;
 }
 
-.card {
+.card,
+.default-card {
   background: white;
-
   padding: 40px;
-
   border-radius: 20px;
-
   text-align: center;
-
   box-shadow: var(--shadow-md);
-
-  transition: 0.3s;
 }
 
-.card:hover {
+.card:hover,
+.default-card:hover {
   transform: translateY(-10px);
-
   box-shadow: var(--shadow-lg);
 }
 
 .card i {
   font-size: 3rem;
-
   color: var(--secondary);
-
   margin-bottom: 20px;
 }
 
@@ -700,58 +475,20 @@ section h2 {
   margin-bottom: 15px;
 }
 
-.card p {
-  line-height: 1.7;
-}
-
-/* ==================================================
-   CARD GLOBAL
-================================================== */
-
-.default-card {
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  box-shadow: var(--shadow-md);
-
-  transition: 0.3s;
-}
-
-.default-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow: var(--shadow-lg);
-}
-
-/* ==================================================
-   BENEFÍCIOS
-================================================== */
-
+/* Grid de Benefícios */
 .benefits-grid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 20px;
 }
 
 .benefits-grid div {
   background: var(--primary);
-
   color: white;
-
   padding: 30px;
-
   border-radius: 20px;
-
   text-align: center;
-
   font-size: 1.2rem;
-
-  transition: 0.3s;
 }
 
 .benefits-grid div:hover {
@@ -760,41 +497,27 @@ section h2 {
 
 .benefits-grid i {
   display: block;
-
   font-size: 2rem;
-
   margin-bottom: 15px;
 }
 
-/* ==================================================
-   RISCOS
-================================================== */
-
+/* Riscos */
 .risk-list {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 25px;
 }
 
 .risk {
   background: white;
-
   padding: 30px;
-
   border-left: 6px solid #ff5757;
-
   border-radius: 15px;
-
   box-shadow: var(--shadow-md);
-
-  transition: 0.3s;
 }
 
 .risk:hover {
   transform: translateY(-8px);
-
   box-shadow: var(--shadow-lg);
 }
 
@@ -802,241 +525,372 @@ section h2 {
   margin-bottom: 10px;
 }
 
-/* ==================================================
-   CASOS REAIS
-================================================== */
-
-.cases {
-  background: #eef6fb;
-}
-
+/* Casos Antigos */
 .case-card {
   background: white;
-
   padding: 30px;
-
   border-radius: 20px;
-
   margin-top: 25px;
-
   box-shadow: var(--shadow-md);
-
-  transition: 0.3s;
 }
 
 .case-card:hover {
   transform: translateY(-8px);
-
   box-shadow: var(--shadow-lg);
 }
 
 .case-card h3 {
   margin-bottom: 15px;
 }
-/* ==================================================
-   CTA
-================================================== */
 
+/* CTA Footer Padrão */
 .cta {
   text-align: center;
-
   background: linear-gradient(135deg, #0e2a5a, #22c1b8);
-
   color: white;
 }
 
 .cta h2 {
   color: white;
 }
-
 .cta p {
   margin: 20px 0 35px;
-
   font-size: 1.1rem;
 }
 
 /* ==================================================
-   FOOTER
+   NOVAS SEÇÕES AJUSTADAS (GUIA, TURING, CASOS 2X2)
 ================================================== */
 
+/* Chamadas Interativas (Sem roxo, sem amarelo) */
+.cta-interativa-secao {
+  padding: 60px 5%;
+  margin: 40px 0;
+  border-radius: 24px;
+}
+
+.cta-simulador,
+.cta-quiz,
+.cta-turing {
+  background: linear-gradient(135deg, #f4f8fb, #eef4f8);
+  border-top: 1px solid rgba(14, 42, 90, 0.05);
+  border-bottom: 1px solid rgba(14, 42, 90, 0.05);
+}
+
+.cta-conteudo-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-icone i {
+  font-size: 4rem;
+  color: var(--primary);
+}
+
+.cta-texto h2 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.cta-texto p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Botão de Chamada Sem Sublinhado */
+.btn-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-cta-link:hover {
+  transform: translateX(4px);
+  background: var(--primary-light);
+}
+
+/* Grid Guia de Bolso */
+.guia-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.guia-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  position: relative;
+}
+
+.guia-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary);
+  opacity: 0.4;
+  margin-bottom: 10px;
+}
+
+.guia-card h3 {
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.guia-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.cases {
+  background: transparent;
+}
+
+.casos-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.caso-card-real {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #dbe4f0;
+  box-shadow: var(--shadow-sm);
+}
+
+.tag-caso {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.erro-juridico {
+  background: #ffebee;
+  color: #c62828;
+}
+.erro-academico {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.erro-medico {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.erro-historico {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.caso-card-real h3 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.caso-card-real p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+/* ==================================================
+   SISTEMA DE DARK MODE COERENTE
+================================================== */
+.dark {
+  background: #081120;
+  color: white;
+}
+
+.dark header {
+  background: rgba(8, 17, 32, 0.92);
+}
+.dark .logo-area span,
+.dark .nav-links a,
+.dark h2,
+.dark .about {
+  color: white;
+}
+.dark footer {
+  background: #050d1a;
+}
+.dark .cta {
+  background: linear-gradient(135deg, #07162d, #0e2a5a);
+}
+.dark .cases {
+  background: transparent;
+}
+.dark .cases h2 {
+  color: white;
+}
+
+.dark .nav-links.ativo {
+  background: #11213f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.dark .nav-links.ativo a {
+  color: white;
+}
+.dark .nav-links.ativo a:hover {
+  color: var(--secondary);
+}
+.dark #menuBtn {
+  color: white;
+}
+.dark .hero {
+  background: linear-gradient(135deg, #07162d, #081120);
+}
+.dark .logo-area img {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .card,
+.dark .risk,
+.dark .case-card,
+.dark .stat-card,
+.dark .default-card,
+.dark .guia-card,
+.dark .caso-card-real {
+  background: #11213f;
+  color: white;
+  border-color: #1c315a;
+}
+
+.dark .benefits-grid div {
+  background: #11213f;
+}
+
+/* Dark Mode unificado para as seções de chamadas */
+.dark .cta-simulador,
+.dark .cta-quiz,
+.dark .cta-turing {
+  background: linear-gradient(135deg, #0b1830, #07162d);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark .cta-icone i {
+  color: var(--secondary);
+}
+.dark .cta-texto h2,
+.dark .caso-card-real h3,
+.dark .guia-card h3 {
+  color: var(--white);
+}
+
+.dark .btn-cta-link {
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+.dark .btn-cta-link:hover {
+  background: var(--white);
+}
+
+/* ==================================================
+   ELEMENTOS INTERNOS FLUTUANTES (FOOTER, TOPO, ETC)
+================================================== */
 footer {
   background: var(--primary);
-
   color: white;
-
   text-align: center;
-
   padding: 60px 20px;
 }
 
 footer img {
   width: 90px;
-
   margin: auto;
-
   margin-bottom: 15px;
-
   border-radius: 50%;
-
   background: white;
-
   padding: 8px;
-
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer h3 {
   margin-bottom: 10px;
 }
-
 footer p {
   margin-top: 10px;
-
   opacity: 0.9;
 }
 
-/* ==================================================
-   GRIDS GLOBAIS
-================================================== */
-
-.grid-2 {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 30px;
-}
-
-.grid-3 {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 30px;
-}
-
-.grid-4 {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 30px;
-}
-
-/* ==================================================
-   REVEAL ANIMATION
-================================================== */
-
-.card,
-.risk,
-.case-card,
-.stat-card,
-.about,
-.benefits-grid div {
-  opacity: 0;
-
-  transform: translateY(40px);
-
-  transition: all 0.8s ease;
-}
-
-.mostrar {
-  opacity: 1 !important;
-
-  transform: translateY(0) !important;
-}
-
-/* ==================================================
-   BOTÃO VOLTAR AO TOPO
-================================================== */
-
 #btnTopo {
   position: fixed;
-
   right: 30px;
-
   bottom: 30px;
-
   width: 55px;
-
   height: 55px;
-
   border: none;
-
   border-radius: 50%;
-
   cursor: pointer;
-
   background: var(--secondary);
-
   color: white;
-
   font-size: 1.2rem;
-
   box-shadow: var(--shadow-md);
-
   opacity: 0;
-
   pointer-events: none;
-
   transition: 0.3s;
-
   z-index: 999;
 }
 
 #btnTopo:hover {
   transform: translateY(-5px);
 }
-
 #btnTopo.show {
   opacity: 1;
-
   pointer-events: all;
 }
 
-/* ==================================================
-   MENSAGEM FLUTUANTE
-================================================== */
-
 .mensagem-ia {
   position: fixed;
-
   left: 20px;
-
   bottom: 20px;
-
   background: var(--primary);
-
   color: white;
-
   padding: 15px 20px;
-
   border-radius: 12px;
-
   box-shadow: var(--shadow-md);
-
   z-index: 999;
 }
 
 .sumir {
   opacity: 0;
-
   transition: 1s;
 }
 
 /* ==================================================
-   ANIMAÇÕES
+   ANIMAÇÕES E ROLAGEM
 ================================================== */
-
 @keyframes float {
   0% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-20px);
   }
-
   100% {
     transform: translateY(0);
   }
@@ -1046,36 +900,27 @@ footer p {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
 @keyframes slideUp {
   from {
     opacity: 0;
-
     transform: translateY(40px);
   }
-
   to {
     opacity: 1;
-
     transform: translateY(0);
   }
 }
-
 @keyframes zoomIn {
   from {
     opacity: 0;
-
     transform: scale(0.8);
   }
-
   to {
     opacity: 1;
-
     transform: scale(1);
   }
 }
@@ -1083,52 +928,44 @@ footer p {
 .fade-in {
   animation: fadeIn 0.8s ease;
 }
-
 .slide-up {
   animation: slideUp 0.8s ease;
 }
-
 .zoom-in {
   animation: zoomIn 0.8s ease;
 }
 
-/* ==================================================
-   SCROLLBAR
-================================================== */
-
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #e8eef4;
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--secondary);
-
   border-radius: 20px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-dark);
+}
+
+/* Animações de Scroll do Script */
+.mostrar {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* ==================================================
    RESPONSIVIDADE
 ================================================== */
-
 @media (max-width: 1100px) {
   .hero-content {
     flex-direction: column;
-
     text-align: center;
   }
-
   .hero-text h1 {
     font-size: 3rem;
   }
-
   .cards,
   .benefits-grid,
   .risk-list,
@@ -1140,27 +977,14 @@ footer p {
   }
 }
 
-/* ==================================================
-   RESPONSIVIDADE
-================================================== */
-
-@media (max-width: 1100px) {
-  .hero-content {
+@media (max-width: 900px) {
+  .cta-conteudo-box {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
-
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-
-  .cards,
-  .benefits-grid,
-  .risk-list,
-  .stats,
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  .casos-grid-2x2,
+  .guia-cards-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1169,108 +993,72 @@ footer p {
   .navbar {
     padding: 18px 20px;
   }
-
   .nav-links {
     display: none;
   }
-
   #menuBtn {
     display: block;
   }
 
   .nav-links.ativo {
     display: flex !important;
-
     flex-direction: column;
-
     position: fixed;
-
     top: 80px;
-
     left: 10px;
-
     right: 10px;
-
     background: white;
-
     border-radius: 15px;
-
     padding: 20px;
-
     gap: 15px;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
     z-index: 9999;
   }
 
   .hero {
     padding-top: 140px;
   }
-
   .hero-text h1 {
     font-size: 2.3rem;
   }
-
   .hero-text p {
     font-size: 1rem;
   }
-
   .hero-image img {
     width: 260px;
   }
-
   .hero-buttons {
     justify-content: center;
   }
-
   section {
     padding: 70px 6%;
   }
-
   .section-title,
   section h2 {
     font-size: 2rem;
   }
-
   .page-header h1 {
     font-size: 2.2rem;
   }
 
-  /* ======================
-     STATS MOBILE
-  ====================== */
-
   .stats {
     grid-template-columns: 1fr;
-
     max-width: 500px;
-
     width: 100%;
-
     margin: 40px auto;
-
     padding: 0 15px;
-
     gap: 20px;
   }
-
   .stat-card {
     width: 100%;
-
     margin: 0 auto;
-
     padding: 25px;
   }
-
   .stat-card h2 {
     font-size: 2.3rem;
-
     margin-bottom: 8px;
-
     line-height: 1;
   }
-
   .stat-card p {
     margin-top: 0;
   }
@@ -1280,21 +1068,17 @@ footer p {
   .hero-text h1 {
     font-size: 1.9rem;
   }
-
   .hero-buttons {
     flex-direction: column;
   }
-
   .btn-primary,
   .btn-secondary {
     width: 100%;
     text-align: center;
   }
-
   .hero-image img {
     width: 220px;
   }
-
   .logo-area span {
     display: block;
     font-size: 1rem;

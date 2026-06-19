@@ -1,0 +1,328 @@
+/* ==================================
+   HERO DA PÁGINA SOBRE
+================================== */
+.sobre-hero {
+  padding-top: 170px;
+  padding-bottom: 80px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary),
+    var(--primary-light)
+  );
+  color: var(--white);
+}
+
+.sobre-hero h1 {
+  color: var(--white) !important;
+}
+
+.dark .sobre-hero {
+  background: linear-gradient(135deg, #07162d, #0b1830);
+}
+
+/* ==================================
+   CONTAINER E LAYOUT
+================================== */
+.sobre-container {
+  max-width: 1100px;
+  margin: 60px auto 100px;
+  padding: 0 5%;
+}
+
+.sobre-secao {
+  margin: 60px 0;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.sobre-texto h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.dark .sobre-texto h2 {
+  color: var(--white);
+}
+
+.sobre-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray);
+  margin-bottom: 15px;
+}
+
+.sobre-imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f6ff;
+  border-radius: 30px;
+  height: 300px;
+}
+
+.dark .sobre-imagem {
+  background: #0b1830;
+  border: 2px solid #1c315a;
+}
+
+.icone-grande {
+  font-size: 6rem;
+  color: var(--primary);
+}
+
+.dark .icone-grande {
+  color: var(--secondary);
+}
+
+/* ==================================
+   DIVISOR
+================================== */
+.divisor-sobre {
+  border: none;
+  height: 2px;
+  background: #e2e8f0;
+  margin: 40px 0;
+}
+
+.dark .divisor-sobre {
+  background: #1c315a;
+}
+
+/* ==================================
+   ESTILIZAÇÃO DA LISTA DA EQUIPE
+================================== */
+.text-center {
+  text-align: center;
+}
+
+.text-center h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.dark .text-center h2 {
+  color: var(--white);
+}
+
+.sub-equipe {
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.sub-equipe strong {
+  color: var(--primary);
+}
+
+.dark .sub-equipe strong {
+  color: var(--secondary);
+}
+
+.equipe-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.membro-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  padding: 20px 25px;
+  border-radius: 15px;
+  border: 2px solid #dbe4f0;
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .membro-item {
+  background: #0b1830;
+  border-color: #1c315a;
+}
+
+.membro-item i {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.dark .membro-item i {
+  color: var(--secondary);
+}
+
+.membro-info h3 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 2px;
+}
+
+.dark .membro-info h3 {
+  color: var(--white);
+}
+
+.membro-info span {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* ==================================
+   SISTEMA SIMÉTRICO DE CARDS (3x2)
+================================== */
+.criterios-criticos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.criterios-linha-tres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.criterios-linha-duas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 735px; /* Alinha perfeitamente com a largura proporcional dos cards superiores */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.criterio-critico-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #dbe4f0;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.criterio-critico-card:hover {
+  transform: translateY(-5px);
+}
+
+.dark .criterio-critico-card {
+  background: #0b1830;
+  border-color: #1c315a;
+}
+
+.criterio-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.criterio-header i {
+  font-size: 1.6rem;
+  color: var(--secondary);
+}
+
+.criterio-header h3 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+}
+
+.dark .criterio-header h3 {
+  color: var(--white);
+}
+
+.criterio-critico-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
+/* ==================================
+   CARD INSTITUCIONAL
+================================== */
+.institucional-card {
+  background: linear-gradient(to right, #f8fbff, #f0f6ff);
+  padding: 40px;
+  border-radius: 24px;
+  border: 2px solid #dbe4f0;
+}
+
+.dark .institucional-card {
+  background: linear-gradient(to right, #07162d, #0b1830);
+  border-color: #1c315a;
+}
+
+.institucional-conteudo h2 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.dark .institucional-conteudo h2 {
+  color: var(--white);
+}
+
+.institucional-conteudo p {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: var(--gray);
+}
+
+.institucional-conteudo p strong {
+  color: var(--primary-dark);
+}
+
+.dark .institucional-conteudo p strong {
+  color: var(--secondary);
+}
+
+.nota-institucional {
+  margin-top: 25px !important;
+  font-style: italic;
+  border-left: 4px solid var(--secondary);
+  padding-left: 15px;
+}
+
+/* ==================================
+   ESTRUTURA DE ANIMAÇÃO JS (REVEAL)
+================================== */
+.animar-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animar-reveal.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================================
+   RESPONSIVIDADE
+================================== */
+@media (max-width: 950px) {
+  .criterios-linha-tres,
+  .criterios-linha-duas {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sobre-imagem {
+    height: 200px;
+  }
+}

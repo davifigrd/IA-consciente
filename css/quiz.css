@@ -323,3 +323,36 @@
     font-size: 1.15rem;
   }
 }
+
+/* ==================================
+   BOTÕES E TELAS FINAIS (QUIZ)
+================================== */
+.center-card .btn-reiniciar-quiz {
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 14px 45px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  transition: 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.center-card .btn-reiniciar-quiz:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: var(--primary-light);
+}
+
+.dark .center-card .btn-reiniciar-quiz {
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+
+.dark .center-card .btn-reiniciar-quiz:hover {
+  background: var(--secondary-light);
+}

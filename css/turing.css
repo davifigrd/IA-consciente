@@ -344,6 +344,7 @@
   background: var(--secondary);
   color: var(--primary-dark);
 }
+
 #btn-proximo-turing:hover {
   transform: scale(1.05);
   box-shadow: var(--shadow-md);
@@ -362,6 +363,37 @@
 .dark .center-card {
   background: #0b1830;
   border-color: #1c315a;
+}
+
+/* Botão de Jogar Novamente Adaptável */
+.center-card .btn-reiniciar {
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--primary);
+  color: var(--white);
+  transition: 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.center-card .btn-reiniciar:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background: var(--primary-light);
+}
+
+.dark .center-card .btn-reiniciar {
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+
+.dark .center-card .btn-reiniciar:hover {
+  background: var(--secondary-light);
 }
 
 @keyframes entradaCards {

@@ -6,13 +6,10 @@
 
     <title>IA Consciente</title>
 
-    <!-- Favicon primeiro -->
     <link rel="icon" href="../img/logo-arredondada.png" type="image/png" />
 
-    <!-- CSS base -->
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +17,6 @@
       rel="stylesheet"
     />
 
-    <!-- Ícones -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -28,8 +24,6 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-
     <header>
       <nav class="navbar" aria-label="Navegação principal">
         <a href="index.html" class="logo-area">
@@ -39,15 +33,9 @@
 
         <ul class="nav-links">
           <li><a href="index.html">Início</a></li>
-
           <li><a href="simulador.html">Simulador</a></li>
-
-          <li><a href="turing.html">Humano x Máquina</a></li>
-
+          <li><a href="turing.html">Teste de Turing</a></li>
           <li><a href="quiz.html">Quiz</a></li>
-
-          <li><a href="guia.html">Guia</a></li>
-
           <li><a href="sobre.html">Sobre</a></li>
         </ul>
 
@@ -63,10 +51,8 @@
       </nav>
     </header>
 
-    <!-- HERO -->
-
     <section class="hero">
-      <div class="conteiner hero-content">
+      <div class="container hero-content">
         <div class="hero-text">
           <h1>
             Aprenda a utilizar Inteligência Artificial de forma crítica e
@@ -81,7 +67,6 @@
 
           <div class="hero-buttons">
             <a href="simulador.html" class="btn-primary"> Testar Simulador </a>
-
             <a href="#sobre" class="btn-secondary"> Saiba Mais </a>
           </div>
         </div>
@@ -92,39 +77,30 @@
       </div>
     </section>
 
-    <!-- ESTATÍSTICAS -->
-
     <section class="stats">
       <div class="stat-card">
         <h2 id="usuarios">0</h2>
-
         <p>Usuários de IA</p>
       </div>
 
       <div class="stat-card">
         <h2 id="conteudos">0</h2>
-
         <p>Conteúdos Gerados</p>
       </div>
 
       <div class="stat-card">
         <h2 id="riscos">0</h2>
-
         <p>Possíveis Erros Detectados</p>
       </div>
     </section>
 
-    <!-- SOBRE -->
-
     <section class="about" id="sobre">
       <h2>O que é IA Consciente?</h2>
-
       <p>
         A Inteligência Artificial tornou-se uma ferramenta poderosa para
         estudos, trabalho e pesquisa. Porém, nem sempre as respostas fornecidas
         são corretas.
       </p>
-
       <p>
         O projeto IA Consciente foi criado para ensinar estudantes, professores
         e usuários comuns a reconhecerem possíveis erros, vieses e limitações
@@ -132,14 +108,10 @@
       </p>
     </section>
 
-    <!-- CARDS -->
-
     <section class="cards">
       <div class="card">
         <i class="fa-solid fa-triangle-exclamation"></i>
-
         <h3>Alucinação</h3>
-
         <p>
           Quando a IA inventa informações que parecem verdadeiras, mas não
           possuem base factual.
@@ -148,27 +120,39 @@
 
       <div class="card">
         <i class="fa-solid fa-scale-balanced"></i>
-
         <h3>Viés</h3>
-
         <p>
-          Sistemas podem reproduzir preconceitos presentes nos dados utilizados
+          Sistemas podem reproduzir preconceites presentes nos dados utilizados
           durante o treinamento.
         </p>
       </div>
 
       <div class="card">
         <i class="fa-solid fa-magnifying-glass"></i>
-
         <h3>Verificação</h3>
-
         <p>
           Toda informação relevante deve ser comparada com fontes confiáveis.
         </p>
       </div>
     </section>
 
-    <!-- BENEFÍCIOS -->
+    <div class="cta-interativa-secao cta-quiz">
+      <div class="cta-conteudo-box">
+        <div class="cta-icone">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+        <div class="cta-texto">
+          <h2>Será que você já sabe tudo sobre Inteligência Artificial?</h2>
+          <p>
+            Faça nosso teste de conhecimentos rápidos e veja se você consegue
+            identificar os riscos e boas práticas no uso cotidiano de IAs.
+          </p>
+          <a href="quiz.html" class="btn-cta-link">
+            Testar Conhecimentos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <section class="benefits">
       <h2>Benefícios da IA</h2>
@@ -196,74 +180,159 @@
       </div>
     </section>
 
-    <!-- RISCOS -->
+    <section class="guia" id="guia-rapido">
+      <h2>Guia de Bolso: Como detectar IA?</h2>
+      <p
+        class="section-subtitle"
+        style="text-align: center; color: var(--gray); margin-bottom: 40px"
+      >
+        Quatro passos rápidos para você aplicar em qualquer texto acadêmico ou
+        notícia antes de confiar.
+      </p>
 
-    <section class="risks">
-      <h2>Principais Riscos</h2>
-
-      <div class="risk-list">
-        <div class="risk">
-          <h3>Fake News</h3>
-
-          <p>Informações incorretas podem ser disseminadas rapidamente.</p>
+      <div class="guia-cards-grid">
+        <div class="guia-card">
+          <div class="guia-num">01</div>
+          <h3>Tom Excessivamente Polido</h3>
+          <p>
+            Textos de IA costumam ser neutros demais, repetem palavras-chave e
+            usam transições perfeitas como "em suma" ou "por conseguinte".
+          </p>
         </div>
 
-        <div class="risk">
-          <h3>Fontes Falsas</h3>
-
-          <p>Algumas IAs inventam livros, artigos e autores.</p>
+        <div class="guia-card">
+          <div class="guia-num">02</div>
+          <h3>Citações Sem Link</h3>
+          <p>
+            Se o texto cita um estudo de uma grande universidade mas não diz o
+            ano, o autor ou o nome exato do artigo, desconfie.
+          </p>
         </div>
 
-        <div class="risk">
-          <h3>Dependência Excessiva</h3>
+        <div class="guia-card">
+          <div class="guia-num">03</div>
+          <h3>Alucinação Lógica</h3>
+          <p>
+            A IA cria narrativas coesas, mas que misturam datas ou inventam
+            biografias de pessoas reais criando uma "verdade fictícia".
+          </p>
+        </div>
 
-          <p>O uso sem senso crítico pode prejudicar a aprendizagem.</p>
+        <div class="guia-card">
+          <div class="guia-num">04</div>
+          <h3>Falta de Nuance</h3>
+          <p>
+            Sistemas de IA raramente tomam partido ou analisam ironias e
+            contextos regionais muito específicos profundamente.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- CASOS REAIS -->
+    <div class="cta-interativa-secao cta-turing">
+      <div class="cta-conteudo-box">
+        <div class="cta-icone">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="cta-texto">
+          <h2>Seu olhar está afiado para o Teste de Turing?</h2>
+          <p>
+            Colocamos textos escritos por alunos reais lado a lado com redações
+            e respostas geradas por IA. Você consegue identificar uma resposta
+            gerada por máquina?
+          </p>
+          <a href="turing.html" class="btn-cta-link">
+            Iniciar Teste <i class="fa-solid fa-circle-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <section class="cases">
-      <h2>Casos Reais</h2>
+      <h2>Casos Reais de Falhas de IA</h2>
+      <p
+        style="
+          text-align: center;
+          color: var(--gray);
+          margin-bottom: 40px;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        Quando a Inteligência Artificial é usada sem revisão, os impactos saem
+        do digital e afetam o mundo real.
+      </p>
 
-      <div class="case-card">
-        <h3>Advogados e citações falsas</h3>
+      <div class="casos-grid-2x2">
+        <div class="caso-card-real">
+          <span class="tag-caso erro-juridico">Jurídico</span>
+          <h3>Advogados e citações falsas</h3>
+          <p>
+            Em Nova York, advogados usaram o ChatGPT para pesquisar
+            jurisprudência. A IA inventou 6 processos falsos com juízes e datas
+            fictícias, resultando em multas e penalidades para o escritório.
+          </p>
+        </div>
 
-        <p>
-          Em diversos países, profissionais utilizaram IA para gerar documentos
-          jurídicos que continham processos inexistentes.
-        </p>
-      </div>
+        <div class="caso-card-real">
+          <span class="tag-caso erro-medico">Saúde</span>
+          <h3>Diagnósticos incorretos</h3>
+          <p>
+            Estudos apontaram que ferramentas médicas de IA integradas a
+            prontuários confundiram sintomas raros e sugeriram dosagens
+            perigosas de medicamentos por falta de contexto clínico humano.
+          </p>
+        </div>
 
-      <div class="case-card">
-        <h3>Informações médicas incorretas</h3>
+        <div class="caso-card-real">
+          <span class="tag-caso erro-academico">Acadêmico</span>
+          <h3>Artigos científicos fantasiados</h3>
+          <p>
+            Estudantes universitários submeteram monografias com referências
+            bibliográficas impecáveis. Ao checar, os professores descobriram que
+            os livros e links gerados por IA nunca existiram.
+          </p>
+        </div>
 
-        <p>
-          Algumas ferramentas já apresentaram diagnósticos incorretos ou
-          inventados.
-        </p>
+        <div class="caso-card-real">
+          <span class="tag-caso erro-historico">Histórico</span>
+          <h3>Cronologias Inventadas</h3>
+          <p>
+            Em uma ferramenta de geração de conteúdo, uma IA afirmou
+            convictamente que o rádio foi inventado no século XVIII por Benjamin
+            Franklin, misturando fatos de forma convincente.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- CTA -->
-
-    <section class="cta">
-      <h2>Você consegue identificar uma resposta gerada por IA?</h2>
-
-      <a href="turing.html" class="btn-primary"> Iniciar Teste </a>
-    </section>
-
-    <!-- FOOTER -->
+    <div class="cta-interativa-secao cta-simulador">
+      <div class="cta-conteudo-box">
+        <div class="cta-icone">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div class="cta-texto">
+          <h2>Quer entender quem está por trás desse projeto?</h2>
+          <p>
+            O IA Consciente é uma iniciativa acadêmica desenvolvida para
+            espalhar o pensamento crítico sobre novas tecnologias.
+          </p>
+          <a href="sobre.html" class="btn-cta-link">
+            Conhecer o Projeto <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <img src="../img/logo.png" alt="Logo" loading="lazy" />
-
       <h3>IA Consciente</h3>
-
-      <p>Projeto de Extensão da Universidade FAMINAS • 2026.1</p>
+      <p>
+        Projeto de Extensão da Universidade FAMINAS •
+        <span id="anoAtual">2026</span>
+      </p>
     </footer>
-
     <script src="../js/script.js"></script>
   </body>
 </html>

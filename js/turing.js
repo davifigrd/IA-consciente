@@ -1,3 +1,6 @@
+/* ==================================
+   BANCO DE QUESTÕES (TESTE DE TURING)
+================================== */
 const bancoQuestoesTuring = {
   facil: [
     {
@@ -154,11 +157,17 @@ const bancoQuestoesTuring = {
   ]
 };
 
+/* ==================================
+   ESTADO GLOBAL DO JOGO
+================================== */
 let dadosTuring = [];
 let rodadaAtual = 0;
 let acertos = 0;
 let respondeuRodada = false;
 
+/* ==================================
+   REFERÊNCIAS DO DOM
+================================== */
 const jogoContainer = document.getElementById("jogo-turing");
 const btnProximo = document.getElementById("btn-proximo-turing");
 const painelStatus = document.getElementById("painel-status");
@@ -166,6 +175,9 @@ const rodadaTxt = document.getElementById("rodada-atual");
 const acertosTxt = document.getElementById("acertos-turing");
 const barraProgresso = document.getElementById("progresso-preenchido-turing");
 
+/* ==================================
+   TELA DE SELEÇÃO DE DIFICULDADE
+================================== */
 function exibirTelaDificuldade() {
   painelStatus.style.display = "none";
   btnProximo.style.display = "none";
@@ -193,6 +205,9 @@ function exibirTelaDificuldade() {
   `;
 }
 
+/* ==================================
+   INICIALIZAÇÃO DO JOGO POR DIFICULDADE
+================================== */
 window.iniciarJogoComDificuldade = function (nivel) {
   dadosTuring = bancoQuestoesTuring[nivel];
   rodadaAtual = 0;
@@ -201,6 +216,9 @@ window.iniciarJogoComDificuldade = function (nivel) {
   carregarRodada();
 };
 
+/* ==================================
+   CARREGAMENTO DE RODADA / RESULTADO FINAL
+================================== */
 function carregarRodada() {
   respondeuRodada = false;
   btnProximo.style.display = "none";
@@ -218,7 +236,7 @@ function carregarRodada() {
         <h2>Desafio Encerrado!</h2>
         <p style="font-size: 1.4rem; margin: 20px 0;">Sua pontuação: <strong>${acertos} de ${dadosTuring.length} acertos</strong></p>
         <p>Seu Ranking de Análise: <strong class="${classeFinal}" style="font-size: 1.3rem; display:block; margin-top:8px;">${nivel}</strong></p>
-        <button class="btn-primary" style="margin-top: 30px; border:none; cursor:pointer; padding:14px 40px; border-radius:50px;" onclick="exibirTelaDificuldade()">Mudar Dificuldade / Jogar Novamente</button>
+        <button class="btn-reiniciar" onclick="exibirTelaDificuldade()">Mudar Dificuldade / Jogar Novamente</button>
       </div>`;
     return;
   }
@@ -253,6 +271,9 @@ function carregarRodada() {
   });
 }
 
+/* ==================================
+   VERIFICAÇÃO DE RESPOSTA / FEEDBACK
+================================== */
 function verificarResposta(escolha) {
   if (respondeuRodada) return;
   respondeuRodada = true;
@@ -282,9 +303,15 @@ function verificarResposta(escolha) {
   btnProximo.style.display = "inline-flex";
 }
 
+/* ==================================
+   EVENTOS
+================================== */
 btnProximo.addEventListener("click", () => {
   rodadaAtual++;
   carregarRodada();
 });
 
+/* ==================================
+   EXECUÇÃO INICIAL
+================================== */
 exibirTelaDificuldade();

@@ -215,14 +215,36 @@ botoesExemplo.forEach((botao) => {
 
     textoInput.value = textoExemplo;
 
-    window.scrollTo({
-      top: document.querySelector(".simulador-section")?.offsetTop - 100,
-      behavior: "smooth"
-    });
+    const isMobile = window.innerWidth <= 900;
+
+    const elementoAlvo = isMobile
+      ? document.getElementById("scoreBox")
+      : document.querySelector(".simulador-section");
+
+    if (elementoAlvo) {
+      let elementoTopo;
+
+      if (isMobile) {
+        const rect = elementoAlvo.getBoundingClientRect();
+        const metadeTela = window.innerHeight / 2;
+        const metadeElemento = rect.height / 2;
+
+        elementoTopo = rect.top + window.scrollY - metadeTela + metadeElemento;
+      } else {
+        elementoTopo = elementoAlvo.getBoundingClientRect().top + window.scrollY - 100;
+      }
+
+      window.scrollTo({
+        top: elementoTopo,
+        behavior: "smooth"
+      });
+    }
 
     setTimeout(() => {
       analisarTexto();
-      textoInput.focus();
+      if (!isMobile) {
+        textoInput.focus();
+      }
     }, 500);
   });
 });

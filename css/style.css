@@ -955,6 +955,139 @@ footer p {
   transform: translateY(0) !important;
 }
 
+/* ==================================
+   ANIMAÇÃO REVEAL DAS SEÇÕES
+================================== */
+.animar-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.animar-reveal.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animar-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ==================================
+   1. EFEITO RIPPLE
+================================== */
+.ripple-circulo {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scale(0);
+  pointer-events: none;
+  animation: animacaoRipple 0.6s ease-out;
+}
+
+.btn-secondary .ripple-circulo,
+.btn-dificuldade .ripple-circulo,
+.alternativa-btn .ripple-circulo,
+.copiar-exemplo .ripple-circulo,
+.opcao-card .ripple-circulo {
+  background: rgba(14, 42, 90, 0.12);
+}
+
+.dark .btn-secondary .ripple-circulo,
+.dark .btn-dificuldade .ripple-circulo,
+.dark .alternativa-btn .ripple-circulo,
+.dark .copiar-exemplo .ripple-circulo,
+.dark .opcao-card .ripple-circulo {
+  background: rgba(34, 193, 184, 0.18);
+}
+
+@keyframes animacaoRipple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* ==================================
+   2. TOAST DE CONFIRMAÇÃO
+================================== */
+.toast-confirmacao {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 22px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 1100;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.toast-confirmacao.toast-visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-confirmacao i {
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
+
+.dark .toast-confirmacao {
+  background: #0b1830;
+  border: 1px solid #1c315a;
+}
+
+@media (max-width: 600px) {
+  .toast-confirmacao {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* ==================================
+   3. MICRO-SHAKE EM ERROS
+================================== */
+@keyframes shakeErro {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.shake-erro {
+  animation: shakeErro 0.4s ease;
+}
+
 /* ==================================================
    RESPONSIVIDADE
 ================================================== */

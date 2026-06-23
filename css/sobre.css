@@ -160,6 +160,10 @@
   color: var(--secondary);
 }
 
+.membro-info {
+  flex: 1;
+}
+
 .membro-info h3 {
   font-size: 1.2rem;
   color: var(--primary-dark);
@@ -173,6 +177,43 @@
 .membro-info span {
   font-size: 0.9rem;
   color: var(--gray);
+}
+
+/* ==================================
+   ÍCONE DE GITHUB NO CARD DO MEMBRO
+   Botão circular discreto, separado do
+   conteúdo textual por margem automática.
+================================== */
+.membro-github {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gray);
+  font-size: 1.1rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.membro-github:hover {
+  background: rgba(34, 193, 184, 0.1);
+  color: var(--secondary);
+  transform: translateY(-2px) rotate(-8deg);
+}
+
+.dark .membro-github {
+  color: var(--gray-light);
+}
+
+.dark .membro-github:hover {
+  background: rgba(34, 193, 184, 0.15);
+  color: var(--secondary);
 }
 
 /* ==================================
@@ -324,5 +365,17 @@
   }
   .sobre-imagem {
     height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .membro-item {
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .membro-github {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
   }
 }

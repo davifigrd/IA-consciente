@@ -1,7 +1,6 @@
 /* ==================================
    HERO
 ================================== */
-
 .simulador-hero {
   padding-top: 170px;
   padding-bottom: 80px;
@@ -40,7 +39,6 @@
 /* ==================================
    HERO - DARK MODE
 ================================== */
-
 .dark .simulador-hero {
   background: linear-gradient(135deg, #07162d, #0b1830);
 }
@@ -50,9 +48,8 @@
 }
 
 /* ==================================
-   O QUE O SIMULADOR VERIFICA
+   VERIFICAÇÃO DO SIMULADOR
 ================================== */
-
 .risks {
   padding: 80px 8%;
 
@@ -66,7 +63,6 @@
 /* ==================================
    ÁREA DO SIMULADOR
 ================================== */
-
 .simulador-section {
   padding: 80px 8%;
 
@@ -92,7 +88,6 @@
 /* ==================================
    CAMPO DE TEXTO
 ================================== */
-
 textarea {
   width: 100%;
 
@@ -132,7 +127,6 @@ textarea:focus {
 /* ==================================
    BOTÕES DO SIMULADOR
 ================================== */
-
 .acoes-texto {
   display: flex;
   align-items: center;
@@ -154,8 +148,6 @@ textarea:focus {
   cursor: pointer;
 }
 
-/* Botão principal */
-
 .acoes-texto .btn-primary {
   background: var(--primary);
 
@@ -176,8 +168,6 @@ textarea:focus {
   box-shadow: var(--shadow-md);
 }
 
-/* Botões secundários */
-
 .acoes-texto .btn-secondary {
   background: transparent;
 
@@ -197,7 +187,6 @@ textarea:focus {
 /* ==================================
    BOTÕES - DARK MODE
 ================================== */
-
 .dark .acoes-texto .btn-primary {
   background: var(--secondary);
 
@@ -229,7 +218,6 @@ textarea:focus {
 /* ==================================
    CARD DE CONFIABILIDADE
 ================================== */
-
 .resultado-card {
   display: flex;
   flex-direction: column;
@@ -286,7 +274,6 @@ textarea:focus {
 /* ==================================
    ÁREA DOS RESULTADOS
 ================================== */
-
 #resultado {
   width: 100%;
 
@@ -299,7 +286,6 @@ textarea:focus {
 /* ==================================
    ALERTAS
 ================================== */
-
 .alerta {
   display: flex;
   align-items: flex-start;
@@ -341,7 +327,6 @@ textarea:focus {
 /* ==================================
    CORES DOS ALERTAS
 ================================== */
-
 .resultado-card.risco-baixo .alerta {
   background: rgba(34, 193, 184, 0.12);
   border-left-color: #22c1b8;
@@ -375,7 +360,6 @@ textarea:focus {
 /* ==================================
    EXEMPLOS DE TESTE
 ================================== */
-
 .exemplos {
   padding: 80px 8%;
 
@@ -415,7 +399,6 @@ textarea:focus {
 /* ==================================
    BADGES DE RISCO
 ================================== */
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -447,7 +430,6 @@ textarea:focus {
 /* ==================================
    BOTÃO COPIAR EXEMPLO
 ================================== */
-
 .copiar-exemplo {
   display: inline-flex;
   align-items: center;
@@ -499,7 +481,6 @@ textarea:focus {
 /* ==================================
    RESPONSIVIDADE
 ================================== */
-
 @media (max-width: 900px) {
   .simulador-grid {
     grid-template-columns: 1fr;
@@ -524,7 +505,6 @@ textarea:focus {
 /* ==================================
    ÍCONE DO BOTÃO COPIAR EXEMPLO
 ================================== */
-
 .copiar-exemplo {
   display: inline-flex;
   align-items: center;
@@ -551,7 +531,6 @@ textarea:focus {
 /* ==================================
    BOTÃO COPIAR EXEMPLO
 ================================== */
-
 .copiar-exemplo {
   display: inline-flex;
   align-items: center;
@@ -577,7 +556,6 @@ textarea:focus {
 /* ==================================
    ANIMAÇÕES
 ================================== */
-
 @keyframes entradaAlerta {
   from {
     opacity: 0;

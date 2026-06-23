@@ -32,7 +32,7 @@ function atualizarIconeDark(isDark) {
 }
 
 /* ==================================
-   REVEAL SCROLL (cards internos, sem mudanças)
+   REVEAL SCROLL
 ================================== */
 // Adicionado os novos cards de casos reais e guias para também animarem no scroll
 const elementos = document.querySelectorAll(
@@ -64,9 +64,7 @@ window.addEventListener("scroll", () => {
 revelarElementos();
 
 /* ==================================
-   ANIMAÇÃO REVEAL DAS SEÇÕES (INTERSECTION OBSERVER)
-   Mesmo padrão usado em sobre.js: aplica fade/translate
-   nas seções marcadas com a classe "animar-reveal".
+   ANIMAÇÃO REVEAL DAS SEÇÕES
 ================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const secoesParaAnimar = document.querySelectorAll(".animar-reveal");
@@ -114,20 +112,6 @@ window.addEventListener("scroll", () => {
 
 /* ==================================
    CONTADORES (INTELIGENTES NO SCROLL)
-
-   AJUSTE ANTI-FLICK:
-   A versão anterior usava setInterval + um listener de
-   "scroll" que rodava a cada pixel rolado, checando a
-   posição da seção centenas de vezes por segundo. Rolar
-   rápido fazia esse listener competir com a própria
-   atualização do número, causando o engasgo visual.
-
-   Agora a detecção de visibilidade usa IntersectionObserver
-   (dispara só quando a seção realmente entra na tela, sem
-   recalcular a cada pixel) e a contagem usa
-   requestAnimationFrame em vez de setInterval, que é
-   sincronizado com o repaint do navegador e não compete
-   com o scroll.
 ================================== */
 function animarContador(id, final, duracao) {
   const elemento = document.getElementById(id);
@@ -257,9 +241,6 @@ console.log("IA Consciente carregado com otimizações.");
 
 /* ==================================
    EFEITO RIPPLE NOS BOTÕES
-   Aplica um círculo expansivo a partir do
-   ponto de clique em qualquer botão do site.
-   Não requer alterações em outros arquivos.
 ================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const seletoresComRipple = [
@@ -311,8 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ==================================
    TOAST DE CONFIRMAÇÃO
-   Pequena notificação flutuante reutilizável.
-   Uso: mostrarToast("Texto aqui")
 ================================== */
 function mostrarToast(texto, tipo = "sucesso") {
   const toastExistente = document.querySelector(".toast-confirmacao");
@@ -338,8 +317,6 @@ function mostrarToast(texto, tipo = "sucesso") {
 
 /* ==================================
    TOAST AO COPIAR EXEMPLO (SIMULADOR)
-   Detecta clique em ".copiar-exemplo" e mostra
-   confirmação, sem alterar a lógica do simulador.js
 ================================== */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".copiar-exemplo").forEach((botao) => {
@@ -351,18 +328,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ==================================
    MICRO-SHAKE EM RESPOSTAS ERRADAS
-   Observa quando o quiz ou o turing adicionam a
-   classe "errada" / "revelada-humano" e aplica
-   um leve tremor no elemento, sem mexer no JS original.
-
-   CORREÇÃO DO BUG DE TRAVAMENTO:
-   A versão anterior entrava em loop infinito porque o
-   próprio código adicionava a classe "shake-erro" dentro
-   do callback do MutationObserver, e essa adição era
-   capturada pelo mesmo observer (que escuta mudanças de
-   classe), disparando o callback de novo, indefinidamente.
-   Agora o observer é desconectado antes de tocarmos na
-   classe, e cada elemento só treme uma vez por rodada.
 ================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const containerQuiz = document.getElementById("quiz-dinamico");

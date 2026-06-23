@@ -1,5 +1,5 @@
 /* ==================================
-   HERO & TEXTOS
+   HERO E TEXTOS
 ================================== */
 .turing-hero {
   padding-top: 170px;
@@ -119,7 +119,6 @@
   color: var(--white);
 }
 
-/* BARRA DE PROGRESSO */
 .barra-progresso-turing {
   flex: 1;
   height: 12px;
@@ -314,7 +313,6 @@
   font-size: 1.3rem;
 }
 
-/* AJUSTE DO ESPAÇAMENTO DA SETA */
 .espaco-seta {
   margin-left: 12px;
 }
@@ -365,7 +363,6 @@
   border-color: #1c315a;
 }
 
-/* Botão de Jogar Novamente Adaptável */
 .center-card .btn-reiniciar {
   margin-top: 30px;
   border: none;

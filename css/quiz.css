@@ -1,5 +1,5 @@
 /* ==================================
-   HERO & TEXTOS
+   HERO E TEXTOS
 ================================== */
 .quiz-hero {
   padding-top: 170px;
@@ -37,11 +37,10 @@
   max-width: 900px;
   margin: 40px auto 80px;
   padding: 0 5%;
-  /* Bloqueia a seleção de texto em todo o corpo do quiz */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Padrão */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* ==================================
@@ -124,7 +123,9 @@
   color: var(--white);
 }
 
-/* BARRA DE PROGRESSO DO QUIZ */
+/* ==================================
+   BARRA DE PROGRESSO DO QUIZ
+================================== */
 .barra-progresso-quiz {
   flex: 1;
   height: 12px;
@@ -182,7 +183,9 @@
   color: var(--white);
 }
 
-/* LISTA DE ALTERNATIVAS */
+/* ==================================
+   LISTA DE ALTERNATIVAS
+================================== */
 .alternativas-lista {
   display: flex;
   flex-direction: column;
@@ -201,7 +204,6 @@
   cursor: pointer;
   color: var(--gray);
   transition: 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  /* Proteção extra para os botões */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -253,7 +255,6 @@
   background: rgba(255, 87, 87, 0.2) !important;
 }
 
-/* DESABILITA CLIQUES, HOVER E MOVIMENTOS */
 .alternativa-btn.desabilitada {
   pointer-events: none !important;
   cursor: default !important;

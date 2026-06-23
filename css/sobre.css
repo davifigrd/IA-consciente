@@ -1,5 +1,5 @@
 /* ==================================
-   HERO DA PÁGINA SOBRE
+   HERO
 ================================== */
 .sobre-hero {
   padding-top: 170px;
@@ -181,10 +181,8 @@
 
 /* ==================================
    ÍCONE DE GITHUB NO CARD DO MEMBRO
-   Botão circular discreto, separado do
-   conteúdo textual por margem automática.
 ================================== */
-.membro-github {
+a.membro-github {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -199,6 +197,10 @@
     color 0.3s ease,
     transform 0.3s ease,
     background 0.3s ease;
+}
+
+a.membro-github i {
+  cursor: pointer !important;
 }
 
 .membro-github:hover {
@@ -236,7 +238,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-  max-width: 735px; /* Alinha perfeitamente com a largura proporcional dos cards superiores */
+  max-width: 735px;
   margin: 0 auto;
   width: 100%;
 }

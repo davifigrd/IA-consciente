@@ -11,7 +11,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Força a remoção de sublinhados e marcadores diretamente nas tags raiz */
 a {
   text-decoration: none !important;
 }
@@ -34,7 +33,6 @@ body {
     color 0.5s ease;
 }
 
-/* Transição global e suave para todos os elementos do projeto */
 .card,
 .risk,
 .case-card,
@@ -117,7 +115,6 @@ section h2,
   color: var(--gray);
 }
 
-/* Grids Padronizados */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -134,7 +131,6 @@ section h2,
   gap: 30px;
 }
 
-/* Utilitários de Margem */
 .text-center {
   text-align: center;
 }
@@ -188,14 +184,14 @@ header {
   padding: 18px 40px;
 }
 
-.logo-area {
+a.logo-area {
   display: flex;
   align-items: center;
   gap: 12px;
   color: inherit;
 }
 
-.logo-area img {
+a.logo-area img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -246,7 +242,6 @@ header {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  cursor: pointer;
   background: var(--secondary);
   color: white;
   font-size: 1rem;
@@ -261,7 +256,6 @@ header {
   display: none;
   border: none;
   background: transparent;
-  cursor: pointer;
   font-size: 1.5rem;
   color: var(--primary);
 }
@@ -273,11 +267,10 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 8% 50px;
+  padding: 120px 8% 120px;
   background: linear-gradient(135deg, #0e2a5a, #22c1b8);
   position: relative;
   overflow: hidden;
-  padding-bottom: 120px;
 }
 
 .hero::before {
@@ -409,16 +402,19 @@ header {
   line-height: 1.9;
 }
 
-/* Estatísticas */
 .stats {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: -60px auto 100px;
+  margin-left: auto !important;
+  margin-right: auto !important;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   padding: 0 30px;
   position: relative;
   z-index: 10;
+  box-sizing: border-box;
 }
 
 .stat-card {
@@ -443,7 +439,6 @@ header {
   transform: translateY(-8px);
 }
 
-/* Cards Tradicionais */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -475,7 +470,6 @@ header {
   margin-bottom: 15px;
 }
 
-/* Grid de Benefícios */
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -501,7 +495,6 @@ header {
   margin-bottom: 15px;
 }
 
-/* Riscos */
 .risk-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -525,7 +518,6 @@ header {
   margin-bottom: 10px;
 }
 
-/* Casos Antigos */
 .case-card {
   background: white;
   padding: 30px;
@@ -543,7 +535,6 @@ header {
   margin-bottom: 15px;
 }
 
-/* CTA Footer Padrão */
 .cta {
   text-align: center;
   background: linear-gradient(135deg, #0e2a5a, #22c1b8);
@@ -562,10 +553,9 @@ header {
    NOVAS SEÇÕES AJUSTADAS (GUIA, TURING, CASOS 2X2)
 ================================================== */
 
-/* Chamadas Interativas (Sem roxo, sem amarelo) */
 .cta-interativa-secao {
   padding: 60px 5%;
-  margin: 40px 0;
+  margin: 40px 3%;
   border-radius: 24px;
 }
 
@@ -603,7 +593,6 @@ header {
   line-height: 1.6;
 }
 
-/* Botão de Chamada Sem Sublinhado */
 .btn-cta-link {
   display: inline-flex;
   align-items: center;
@@ -621,7 +610,6 @@ header {
   background: var(--primary-light);
 }
 
-/* Grid Guia de Bolso */
 .guia-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -783,7 +771,6 @@ header {
   background: #11213f;
 }
 
-/* Dark Mode unificado para as seções de chamadas */
 .dark .cta-simulador,
 .dark .cta-quiz,
 .dark .cta-turing {
@@ -845,7 +832,6 @@ footer p {
   height: 55px;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
   background: var(--secondary);
   color: white;
   font-size: 1.2rem;
@@ -949,7 +935,6 @@ footer p {
   background: var(--secondary-dark);
 }
 
-/* Animações de Scroll do Script */
 .mostrar {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -1088,6 +1073,35 @@ footer p {
   animation: shakeErro 0.4s ease;
 }
 
+/* ==================================
+   COMPORTAMENTO DO CURSOR
+================================== */
+* {
+  cursor: default;
+}
+
+input,
+textarea,
+[contenteditable] {
+  cursor: text !important;
+}
+
+a,
+button,
+[role="button"],
+label {
+  cursor: pointer !important;
+}
+
+a.logo-area,
+a.logo-area img,
+a.logo-area span,
+#darkModeBtn i,
+#menuBtn,
+#btnTopo {
+  cursor: pointer !important;
+}
+
 /* ==================================================
    RESPONSIVIDADE
 ================================================== */
@@ -1108,6 +1122,12 @@ footer p {
   .grid-4 {
     grid-template-columns: 1fr;
   }
+  .guia-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .casos-grid-2x2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1120,9 +1140,23 @@ footer p {
   .guia-cards-grid {
     grid-template-columns: 1fr;
   }
+  .guia-card,
+  .caso-card-real,
+  .card,
+  .default-card {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 768px) {
+  .mensagem-ia {
+    left: 50%;
+    right: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100vw - 40px);
+  }
   .navbar {
     padding: 18px 20px;
   }
@@ -1158,20 +1192,21 @@ footer p {
     font-size: 1rem;
   }
   .hero-image img {
-    width: 260px;
+    width: 220px;
   }
   .hero-buttons {
     justify-content: center;
   }
+
   section {
-    padding: 70px 6%;
+    padding: 60px 5%;
   }
   .section-title,
   section h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
   .page-header h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .stats {
@@ -1195,11 +1230,73 @@ footer p {
   .stat-card p {
     margin-top: 0;
   }
+
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .card,
+  .default-card {
+    padding: 25px 20px;
+  }
+  .card i {
+    font-size: 2.2rem;
+  }
+
+  .guia-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 20px auto 0;
+  }
+  .guia-card {
+    padding: 20px;
+  }
+  .guia-num {
+    font-size: 1.6rem;
+  }
+
+  .casos-grid-2x2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .caso-card-real {
+    padding: 22px 18px;
+  }
+  .caso-card-real h3 {
+    font-size: 1.1rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .benefits-grid div {
+    padding: 20px 15px;
+    font-size: 1rem;
+  }
+  .benefits-grid i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .cta-interativa-secao {
+    padding: 40px 5%;
+    margin: 20px 3%;
+  }
+  .cta-icone i {
+    font-size: 2.8rem;
+  }
+  .cta-texto h2 {
+    font-size: 1.4rem;
+  }
+  .cta-texto p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-text h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
   .hero-buttons {
     flex-direction: column;
@@ -1210,10 +1307,44 @@ footer p {
     text-align: center;
   }
   .hero-image img {
-    width: 220px;
+    width: 190px;
   }
-  .logo-area span {
+  a.logo-area span {
     display: block;
     font-size: 1rem;
+  }
+
+  section h2,
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .default-card {
+    padding: 20px 16px;
+  }
+
+  .caso-card-real,
+  .guia-card {
+    padding: 18px 14px;
+  }
+
+  .btn-cta-link {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .cta-texto h2 {
+    font-size: 1.25rem;
+  }
+
+  .stat-card h2 {
+    font-size: 2rem;
   }
 }

@@ -1,134 +1,223 @@
-# IA Consciente
+# 🧠 IA Consciente
 
-## Sobre o Projeto
+### Promovendo o uso crítico, ético e responsável da Inteligência Artificial.
 
-O **IA Consciente** é uma aplicação web desenvolvida com HTML, CSS e JavaScript que tem como objetivo promover o uso responsável e crítico da Inteligência Artificial.
+<p>
 
-A plataforma auxilia estudantes, professores e usuários em geral a identificar possíveis erros, imprecisões e padrões comuns encontrados em conteúdos gerados por IA, incentivando a verificação das informações antes de sua utilização.
+<img src="https://img.shields.io/badge/Status-Concluído-2ea44f?style=for-the-badge">
 
-Este projeto foi desenvolvido como atividade de extensão acadêmica, buscando contribuir para a educação digital e o combate à desinformação.
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 
----
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 
-## Objetivos
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
-- Incentivar o uso consciente da Inteligência Artificial.
-- Demonstrar limitações e riscos das IAs generativas.
-- Desenvolver pensamento crítico sobre conteúdos produzidos por IA.
-- Auxiliar na identificação de possíveis informações incorretas.
-- Promover boas práticas de validação de informações.
+<img src="https://img.shields.io/badge/Projeto-Extensão_Acadêmica-0078D4?style=for-the-badge">
 
----
+</p>
 
-## Funcionalidades
-
-### Detector de Possíveis Alucinações
-
-Permite ao usuário colar um texto gerado por IA para análise.
-
-O sistema identifica automaticamente padrões considerados de risco, como:
-
-- Estatísticas sem fonte;
-- Datas específicas sem referência;
-- Citações genéricas;
-- Afirmações absolutas;
-- Linguagem excessivamente persuasiva;
-- Excesso de adjetivos.
-
-Ao final, são exibidos alertas e recomendações para verificação das informações.
+</div>
 
 ---
 
-### Teste Humano x Máquina
+## 📖 Sobre
 
-Uma experiência inspirada no Teste de Turing.
+O **IA Consciente** é uma aplicação web desenvolvida com **HTML, CSS e JavaScript** que incentiva o uso responsável da Inteligência Artificial.
+
+A plataforma auxilia estudantes, professores e demais usuários a reconhecer possíveis limitações presentes em conteúdos gerados por IA, incentivando sempre a validação das informações em fontes confiáveis.
+
+O projeto foi desenvolvido como atividade de **Extensão Acadêmica**, buscando contribuir para a educação digital e o desenvolvimento do pensamento crítico.
+
+---
+
+## 📑 Índice
+
+* [✨ Funcionalidades](#-funcionalidades)
+* [🎯 Objetivos](#-objetivos)
+* [🛠 Tecnologias](#-tecnologias-utilizadas)
+* [📸 Demonstração](#-demonstração)
+* [📂 Estrutura do Projeto](#-estrutura-do-projeto)
+* [🚀 Como Executar](#-como-executar)
+* [🌎 Impacto Social](#-impacto-social)
+* [👥 Desenvolvedores](#-desenvolvedores)
+* [📜 Licença](#-licença)
+
+---
+
+# ✨ Funcionalidades
+
+### 🔍 Detector de Possíveis Alucinações
+
+Analisa textos produzidos por Inteligência Artificial em busca de padrões frequentemente associados a informações potencialmente duvidosas.
+
+Detecta, por exemplo:
+
+* 📊 Estatísticas sem fonte;
+* 📅 Datas específicas sem referência;
+* 💬 Citações genéricas;
+* ❗ Afirmações absolutas;
+* 🗣 Linguagem excessivamente persuasiva;
+* ✨ Excesso de adjetivos.
+
+Ao final da análise, o usuário recebe orientações para verificar a confiabilidade das informações.
+
+---
+
+### 🤖 Humano × Máquina
+
+Inspirado no Teste de Turing.
 
 O usuário recebe dois textos:
 
-- Um produzido por um humano;
-- Um produzido por Inteligência Artificial.
+* 👤 Um produzido por uma pessoa;
+* 🤖 Outro produzido por Inteligência Artificial.
 
-Após escolher qual acredita ser o texto humano, o sistema revela a resposta e apresenta características linguísticas encontradas em cada texto.
-
----
-
-### Índice de Confiabilidade
-
-Após a análise de um texto, o sistema gera uma pontuação de confiabilidade baseada nos padrões identificados.
+Após escolher qual acredita ser o texto humano, o sistema apresenta o resultado e explica quais características auxiliaram na identificação.
 
 ---
 
-### Dicas Educativas
+### 📈 Índice de Confiabilidade
 
-Ao final de cada análise, o usuário recebe orientações sobre:
+Após cada análise, o sistema gera uma pontuação baseada nos padrões encontrados no texto.
 
-- Como verificar fontes;
-- Como validar informações produzidas por IA;
-- Boas práticas no uso de ferramentas de Inteligência Artificial;
-- Riscos da confiança excessiva em conteúdos automatizados.
+Essa pontuação serve como um indicador para estimular a verificação das informações.
 
 ---
 
-## Tecnologias Utilizadas
+### 💡 Dicas Educativas
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
+Ao término da análise, o usuário recebe recomendações sobre:
+
+* Como verificar fontes;
+* Como validar conteúdos produzidos por IA;
+* Boas práticas de uso;
+* Cuidados com informações automatizadas.
 
 ---
 
-## Como Executar
+# 🎯 Objetivos
 
-1. Clone o repositório:
+* Incentivar o uso responsável da Inteligência Artificial;
+* Desenvolver pensamento crítico;
+* Demonstrar limitações das IAs generativas;
+* Combater a desinformação;
+* Promover educação digital;
+* Incentivar a verificação de fontes.
 
-```bash
-git clone https://github.com/davifigrd/IA-Consciente.git
+---
+
+# 🖼 Demonstração
+
+> *Em breve serão adicionadas capturas de tela da aplicação.*
+
+<!--
+
+<p align="center">
+
+<img src="assets/home.png" width="900">
+
+</p>
+
+-->
+
+---
+
+# 🛠 Tecnologias Utilizadas
+
+<div align="center">
+
+| Tecnologia   | Utilização                       |
+| ------------ | -------------------------------- |
+| 🌐 HTML5     | Estrutura da aplicação           |
+| 🎨 CSS3      | Estilização                      |
+| ⚡ JavaScript | Funcionalidades e interatividade |
+
+</div>
+
+---
+
+# 📂 Estrutura do Projeto
+
+```text
+IA-Consciente/
+
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── img/
+│   └── icons/
+│
+├── index.html
+├── README.md
+└── LICENSE
 ```
 
-2. Entre na pasta do projeto:
+---
+
+# 🚀 Como Executar
+
+Clone o repositório:
 
 ```bash
-cd IA-Consciente
+git clone https://github.com/davifigrd/IA-consciente.git
 ```
 
-3. Abra o arquivo `index.html` em qualquer navegador.
+Entre na pasta:
 
-Não é necessário instalar dependências ou configurar servidor.
+```bash
+cd IA-consciente
+```
 
----
+Abra o arquivo `index.html` em qualquer navegador moderno.
 
-## Impacto Social
-
-O projeto busca contribuir para:
-
-- Educação digital;
-- Alfabetização em Inteligência Artificial;
-- Combate à desinformação;
-- Desenvolvimento do pensamento crítico;
-- Uso ético e responsável da tecnologia.
+> Não é necessário instalar dependências ou configurar servidor.
 
 ---
 
-## Público-Alvo
+# 🌎 Impacto Social
 
-- Estudantes;
-- Professores;
-- Pesquisadores;
-- Profissionais que utilizam IA no dia a dia;
-- Qualquer pessoa interessada em compreender melhor os limites da Inteligência Artificial.
+Este projeto busca contribuir para:
 
----
-
-## Desenvolvedores
-
-- **Cayke Gonçalves Garcia: 1-26-16589**
-- **Davi Figueiredo Rocha Dutra: 1-26-16975**
-- **Heitor Francisco Ribeiro: 1-26-16976**
-- **Júlia da Silva Santos: 1-26-16250**
-- **Kauã Amorim de Oliveira: 1-26-17036**
+* 📚 Educação Digital;
+* 🤖 Alfabetização em Inteligência Artificial;
+* 🛡 Combate à desinformação;
+* 🧠 Desenvolvimento do pensamento crítico;
+* ⚖ Uso ético e responsável da tecnologia.
 
 ---
 
-## Créditos e Contexto Acadêmico
+# 👥 Desenvolvedores
 
-Este projeto foi desenvolvido para fins estritamente educacionais e acadêmicos como parte da disciplina Desenvolvimento Front-end, sob a orientação do professor Flávio Motta.
+| Nome                        | Matrícula      |
+| --------------------------- | -------------- |
+| Cayke Gonçalves Garcia      | **1-26-16589** |
+| Davi Figueiredo Rocha Dutra | **1-26-16975** |
+| Heitor Francisco Ribeiro    | **1-26-16976** |
+| Júlia da Silva Santos       | **1-26-16250** |
+| Kauã Amorim de Oliveira     | **1-26-17036** |
+
+---
+
+# 🎓 Contexto Acadêmico
+
+Projeto desenvolvido para fins **exclusivamente educacionais**, como atividade de **Extensão Acadêmica** da disciplina **Desenvolvimento Front-end**, sob orientação do professor **Flávio Motta**.
+
+---
+
+# 📜 Licença
+
+Este projeto foi desenvolvido para fins acadêmicos.
+
+Caso deseje reutilizar parte do código, consulte previamente os autores.
+
+---
+
+<div align="center">
+
+## 🧠 Questione. Verifique. Aprenda.
+
+**A Inteligência Artificial pode ser uma excelente ferramenta, mas a responsabilidade pela informação continua sendo humana.**
+
+Se este projeto foi útil para você, considere deixar uma ⭐ no repositório.
+
+</div>

@@ -18,26 +18,11 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}html/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Assemble deployment directory
-        run: |
-          mkdir dist
-          cp -r html/* dist/
-          
-          cp -r css dist/ 2>/dev/null || true
-          cp -r js dist/ 2>/dev/null || true
-          cp -r img dist/ 2>/dev/null || true
-          cp -r videos dist/ 2>/dev/null || true
-
-          sed -i 's|\.\./css/|css/|g' dist/index.html
-          sed -i 's|\.\./js/|js/|g' dist/index.html
-          sed -i 's|\.\./img/|img/|g' dist/index.html
-          sed -i 's|\.\./videos/|videos/|g' dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -45,7 +30,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          # Sobe o projeto inteiro de forma limpa, mantendo a estrutura do seu computador intacta
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment

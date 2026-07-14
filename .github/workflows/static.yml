@@ -18,11 +18,27 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}html/
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Comando que cria o redirecionamento temporário em memória no GitHub
+      - name: Create temporary redirect index
+        run: |
+          cat <<EOF > index.html
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta http-equiv="refresh" content="0; url=./html/" />
+              <script>window.location.href = "./html/"</script>
+            </head>
+            <body>
+              <p>Redirecionando... Se não funcionar, <a href="./html/">clique aqui</a>.</p>
+            </body>
+          </html>
+          EOF
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -30,7 +46,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Sobe o projeto inteiro de forma limpa, mantendo a estrutura do seu computador intacta
           path: '.'
 
       - name: Deploy to GitHub Pages

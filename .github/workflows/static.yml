@@ -29,12 +29,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 💡 O PULO DO GATO CLEAN:
-      # Este comando apenas faz uma cópia temporária do seu index.html para a raiz 
-      # dentro do servidor de publicação do GitHub. 
-      # Isso NÃO altera nada nas suas pastas locais e nem cria arquivos visíveis no seu repositório!
-      - name: Copy index to root for deployment
-        run: cp html/index.html ./index.html
+      # 💡 SOLUÇÃO DEFINITIVA:
+      # Criamos uma pasta temporária de build ('dist'), copiamos o conteúdo de 'html' para a raiz dela,
+      # e depois copiamos as pastas css, js e videos para dentro dela no mesmo nível relativo!
+      # Isso simula perfeitamente sua estrutura sem quebrar nenhum link e sem alterar seu PC.
+      - name: Assemble deployment directory
+        run: |
+          mkdir dist
+          cp -r html/* dist/
+          cp -r css dist/ 2>/dev/null || true
+          cp -r js dist/ 2>/dev/null || true
+          cp -r videos dist/ 2>/dev/null || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -42,8 +47,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Enviamos o repositório inteiro para que o CSS/JS/Vídeos externos continuem acessíveis
-          path: '.'
+          # Publicamos apenas a pasta temporária que criamos com a estrutura perfeita
+          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
